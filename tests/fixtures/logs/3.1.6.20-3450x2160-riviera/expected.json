@@ -1,0 +1,1054 @@
+[
+{
+"kind": "version",
+"display": "3.1.6.20"
+},
+{
+"kind": "course",
+"course": "riviera_gsp"
+},
+{
+"kind": "course_display",
+"display": "Riviera"
+},
+{
+"kind": "skip_hole",
+"hole": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "fairway"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 9,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 85.55037,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "deeprough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 9,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 40.66138,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "deeprough"
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 9,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 2.83382,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 9,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 0.7576046,
+"gimmie": 1.22
+},
+{
+"kind": "gimmie"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 9,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 10,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 242.22,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "rough"
+},
+{
+"kind": "material",
+"surface": "fairway"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 10,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 67.5864,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 10,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 4.108645,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 10,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 0.2492906,
+"gimmie": 1.22
+},
+{
+"kind": "gimmie"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 10,
+"score": 5,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "deeprough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 11,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 143.1686,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "deeprough"
+},
+{
+"kind": "material",
+"surface": "deeprough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 11,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 39.00063,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "deeprough"
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 11,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 9.873633,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 11,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 1.01324,
+"gimmie": 1.22
+},
+{
+"kind": "gimmie"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 11,
+"score": 5,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "deeprough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 12,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 105.6272,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "deeprough"
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 12,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 15.95545,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "rough"
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 12,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 4.270129,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 12,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 0.6622367,
+"gimmie": 1.22
+},
+{
+"kind": "gimmie"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 12,
+"score": 5,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "sand"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 13,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 16.28902,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "sand"
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 13,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 1.463351,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "hole_out"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 13,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 14,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 203.2067,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 14,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 51.21647,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "rough"
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 14,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 3.708852,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 14,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 0.6351461,
+"gimmie": 1.22
+},
+{
+"kind": "gimmie"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 14,
+"score": 5,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 15,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 5.220559,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 15,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 0.7254261,
+"gimmie": 1.22
+},
+{
+"kind": "gimmie"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 15,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 16,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 262.6707,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "sand"
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 16,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 95.10333,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "rough"
+},
+{
+"kind": "material",
+"surface": "green"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 16,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 9.756986,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "hole_out"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 16,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "fairway"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 17,
+"score": 1,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 163.6736,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "material",
+"surface": "rough"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 17,
+"score": 2,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 22.96182,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": false
+},
+{
+"kind": "penalty_surface",
+"surface": "rough"
+},
+{
+"kind": "material",
+"surface": "fairway"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 17,
+"score": 3,
+"strokes": 1
+},
+{
+"kind": "select",
+"player": 0
+},
+{
+"kind": "tdist",
+"to_pin": 3.001844,
+"gimmie": 1.22
+},
+{
+"kind": "shot_fired"
+},
+{
+"kind": "launch_mode",
+"putting": true
+},
+{
+"kind": "hole_out"
+},
+{
+"kind": "state",
+"player": 0,
+"hole": 17,
+"score": 4,
+"strokes": 1
+},
+{
+"kind": "round_complete"
+},
+{
+"kind": "layout",
+"pars": [
+5,
+4,
+4,
+3,
+4,
+3,
+4,
+4,
+4,
+4,
+5,
+4,
+4,
+3,
+4,
+3,
+5,
+4
+],
+"active": [
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true
+]
+},
+{
+"kind": "round_complete"
+},
+{
+"kind": "layout",
+"pars": [
+5,
+4,
+4,
+3,
+4,
+3,
+4,
+4,
+4,
+4,
+5,
+4,
+4,
+3,
+4,
+3,
+5,
+4
+],
+"active": [
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true
+]
+},
+{
+"kind": "round_complete"
+}
+]

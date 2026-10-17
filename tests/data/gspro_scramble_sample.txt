@@ -1,0 +1,67 @@
+Selected Course: paynes_valley_gsp
+Loading Course file C:\GSproV1\Courses/paynes_valley_gsp/paynes_valley_gsp.gkd
+Loading Course file C:\GSproV1\Courses/paynes_valley_gsp/paynes_valley_gsp.gkd
+Loading course Paynes Valley
+ * ------- Shot Fired! ------- *
+LaunchExt Vars: sp 138.37, el 15.21, az -4.52, ts 1588.58, sa -15.74, cy 237.54, id 1467
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 0  strokes: 1  Previous Score: 0
+ * ------- Shot Fired! ------- *
+LaunchExt Vars: sp 131.25, el 17.43, az -2.26, ts 3188.85, sa 16.15, cy 207.85, id 1469
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 0  strokes: 1  Previous Score: 0
+DoNotShowTeamSelectShotCheck: False
+Selecting shot for player: 1
+Data for selected player: X 922.0953 Y 116.9781 Z 243.9446
+Logging tdist: 125.4661 and ActiveGameGimmieDistance: 1.22
+SelectShotCopyScoreToTeammates = true
+Teammate found that was not the active player
+Standard Teammate Result Copy
+1503 SelectShot Updating teammate score: player 0
+Copy Results for teammate: X 922.0953 Y 116.9781 Z 243.9446
+Copy Results for active player: X 922.0953 Y 116.9781 Z 243.9446
+Next Player
+ * ------- Shot Fired! ------- *
+LaunchExt Vars: sp 97.49, el 21.28, az 0.75, ts 6440.21, sa 7.58, cy 128.98, id 1471
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 0  strokes: 1  Previous Score: 1
+Next Player
+ * ------- Shot Fired! ------- *
+LaunchExt Vars: sp 94.81, el 29.99, az -3.02, ts 6542.67, sa -9.76, cy 121.58, id 1473
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 0  strokes: 1  Previous Score: 1
+DoNotShowTeamSelectShotCheck: False
+Selecting shot for player: 0
+Data for selected player: X 841.9684 Y 112.8117 Z 138.6211
+Logging tdist: 12.84738 and ActiveGameGimmieDistance: 1.22
+SelectShotCopyScoreToTeammates = true
+Teammate found that was not the active player
+Standard Teammate Result Copy
+1503 SelectShot Updating teammate score: player 1
+Copy Results for teammate: X 841.9684 Y 112.8117 Z 138.6211
+Copy Results for active player: X 841.9684 Y 112.8117 Z 138.6211
+Next Player
+ * ------- Shot Fired! ------- *
+LaunchExt Vars: sp 13.12, el 0, az 4.41, ts 0, sa 45, cy 0, id 1475
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 0  strokes: 1  Previous Score: 2
+Same player
+ * ------- Shot Fired! ------- *
+LaunchExt Vars: sp 12.2, el 0, az 1.65, ts 0, sa 45, cy 0, id 1477
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 0  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Data for selected player: X 855.3751 Y 113.2086 Z 138.9422
+Logging tdist: 1.011802 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 0  strokes: 1  Previous Score: 3
+SelectShotCopyScoreToTeammates = true
+Teammate found that was not the active player
+Select Shot - Marking teamats as gimmie distance
+ActivePlayer: 1  currentHole: 0  strokes: 1  Previous Score: 3
+1333 SelectShot Updating teammate score: player 1  score: System.Int32[]
+Real putt made and all players done - AllPlayersHoledOut

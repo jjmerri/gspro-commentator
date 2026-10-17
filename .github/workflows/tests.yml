@@ -1,0 +1,36 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.12"
+            extras: cloud,league,dev,jev
+          - os: ubuntu-latest
+            python: "3.13"
+            extras: cloud,league,dev,jev
+          # The sim PC's platform, with the capture extra (OCR, sniffer, Windows Graphics Capture).
+          - os: windows-latest
+            python: "3.12"
+            extras: capture,cloud,league,dev,jev
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -e ".[${{ matrix.extras }}]"
+      # The GSPro screenshots aren't in the repo (see data/screens/SOURCES.md); tests that need them skip.
+      - run: python -m pytest -q

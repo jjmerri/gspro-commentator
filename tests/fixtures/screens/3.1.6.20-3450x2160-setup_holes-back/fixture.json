@@ -1,0 +1,77 @@
+{
+ "captured": "2026-10-16 15:25:31",
+ "kind": "setup_holes",
+ "gspro_version": "3.1.6.20",
+ "size": [
+  3450,
+  2160
+ ],
+ "regions": {
+  "setup_course": {
+   "left": 0.797,
+   "top": 0.922,
+   "width": 0.165,
+   "height": 0.064,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_holes_tab": {
+   "left": 0.57,
+   "top": 0.108,
+   "width": 0.12,
+   "height": 0.04,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_front9_box": {
+   "left": 0.074,
+   "top": 0.221,
+   "width": 0.018,
+   "height": 0.028,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_back9_box": {
+   "left": 0.074,
+   "top": 0.491,
+   "width": 0.018,
+   "height": 0.028,
+   "anchor": "top",
+   "aspect": null
+  }
+ },
+ "boxes": {
+  "setup_course": [
+   2750,
+   1992,
+   569,
+   138
+  ],
+  "setup_holes_tab": [
+   1966,
+   233,
+   414,
+   86
+  ],
+  "setup_front9_box": [
+   255,
+   477,
+   62,
+   60
+  ],
+  "setup_back9_box": [
+   255,
+   1061,
+   62,
+   60
+  ]
+ },
+ "expected": {
+  "course": "BEAVER CREEK GOLF COURSE",
+  "holes_tab": true,
+  "picked": [
+   10,
+   9
+  ]
+ }
+}

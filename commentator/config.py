@@ -1,0 +1,554 @@
+from pathlib import Path
+from typing import Literal
+
+import yaml
+from pydantic import BaseModel, Field, field_validator
+
+
+class Region(BaseModel):
+    """Pixels, or fractions of the monitor when every value is <= 1 (resolution-independent).
+
+    GSPro scales its HUD with the screen *width* and pins each panel to an edge, so on a screen of a
+    different shape a panel keeps its horizontal fractions but its height (and its distance from the
+    edge it's pinned to) changes by (screen aspect / calibration aspect). Set `aspect` to the
+    width/height ratio the fractions were measured at and `anchor` to the pinned edge, and the box is
+    adjusted to the screen it's read on. Without `aspect` the fractions are used as they are.
+    """
+
+    left: float
+    top: float
+    width: float
+    height: float
+    anchor: Literal["top", "bottom", "middle"] = "top"
+    aspect: float | None = None
+
+    def to_pixels(self, screen_w: int, screen_h: int) -> tuple[int, int, int, int]:
+        if max(self.left, self.top, self.width, self.height) <= 1:
+            top, height = self.top, self.height
+            if self.aspect and screen_h:
+                r = (screen_w / screen_h) / self.aspect
+                height = min(1.0, self.height * r)
+                if self.anchor == "top":
+                    top = self.top * r
+                elif self.anchor == "bottom":
+                    top = 1 - (1 - self.top - self.height) * r - height
+                else:
+                    top = 0.5 + (self.top + self.height / 2 - 0.5) * r - height / 2
+                top = min(max(top, 0.0), 1 - height)
+            return (round(self.left * screen_w), round(top * screen_h),
+                    round(self.width * screen_w), round(height * screen_h))
+        return int(self.left), int(self.top), int(self.width), int(self.height)
+
+
+# The aspect (width / height) the HUD defaults were measured at: GSPro on a 16:10 screen.
+HUD_ASPECT = 1.6
+
+
+# Generous boxes that fit the GSPro 3.1.x release HUD, measured on a 16:10 screen and adjusted to other
+# screen shapes (checked on 16:9) by the pinned edge each panel sits against (see Region).
+DEFAULT_REGIONS = {
+    # Stops above the list of other players GSPro shows under the active one.
+    "player_box": Region(left=0.0, top=0.0, width=0.32, height=0.086, aspect=HUD_ASPECT),
+    # Just the top row's name cell inside player_box (current player is always on top): opaque box
+    # background, left of the score badge, above the shot/distance row. Pixel-compared, never OCR'd.
+    "player_name": Region(left=0.02, top=0.024, width=0.13, height=0.026, aspect=HUD_ASPECT),
+    "hole_box": Region(left=0.76, top=0.0, width=0.22, height=0.10, aspect=HUD_ASPECT),
+    "tiles": Region(left=0.85, top=0.08, width=0.15, height=0.40, aspect=HUD_ASPECT),
+    # A second tile panel some players show down the left edge (spin, launch, face, offline...).
+    "tiles_left": Region(left=0.0, top=0.08, width=0.16, height=0.40, aspect=HUD_ASPECT),
+    # Tall, because the minimap header moves with the minimap's size (collapsed, it sits near the bottom).
+    "lie": Region(left=0.84, top=0.45, width=0.16, height=0.53, anchor="bottom", aspect=HUD_ASPECT),
+    # Bottom-left club and handedness boxes ("Driver" / "RH").
+    "club": Region(left=0.0, top=0.84, width=0.1, height=0.14, anchor="bottom", aspect=HUD_ASPECT),
+    # GSPro's overhead minimap, read for hazards by minimap.provider: jev.
+    "minimap": Region(left=0.855, top=0.574, width=0.133, height=0.387, anchor="bottom", aspect=HUD_ASPECT),
+    "slope": Region(left=0.85, top=0.945, width=0.15, height=0.055, anchor="bottom", aspect=HUD_ASPECT),
+    # The other players in the match, one row each under the active player's box (up to 7).
+    "others": Region(left=0.0, top=0.083, width=0.22, height=0.27, aspect=HUD_ASPECT),
+    # GSPro's scorecard pops up mid-screen between holes: its title, then the whole table.
+    "scorecard_title": Region(left=0.3, top=0.12, width=0.4, height=0.2, anchor="middle", aspect=HUD_ASPECT),
+    "scorecard": Region(left=0.04, top=0.15, width=0.92, height=0.68, anchor="middle", aspect=HUD_ASPECT),
+    # GSPro's "For Birdie" result banner, centre-screen on hole completion: "BIRDIE", "PAR",
+    # "DBL BOGEY"... A reliable "hole is over" + score signal. Generous default box (centre, around
+    # mid-height); calibrate it tighter to your resolution with `calibrate` / `ocr-test`.
+    "score_banner": Region(left=0.25, top=0.40, width=0.50, height=0.26, anchor="middle", aspect=HUD_ASPECT),
+    # --- GSPro setup screen (pre-round), read for the early opener (commentary.preround). Calibrated
+    # to 3450x2160 (fractional, so resolution-independent, but only checked on a 16:10 screen); recheck
+    # with `calibrate --out setup` if your screen shape or HUD scale differs. The course is in the bottom-right "Play <course>!" button (which also
+    # marks that the setup screen is up); players fill a 4x2 grid of name slots, slot 1 starting with
+    # your name. Boxes are kept tight to each name pill: OCR returns nothing from a box that also
+    # swallows the pill border or the dropdown chevron.
+    # An empty slot shows a centered "+" add-player button (not the name pill), so the boxes are kept
+    # tight to the top-of-card pill and the watcher drops any read without a letter (see _watch_setup).
+    "setup_course": Region(left=0.797, top=0.922, width=0.165, height=0.064),
+    "setup_slot_1": Region(left=0.070, top=0.254, width=0.139, height=0.050),
+    "setup_slot_2": Region(left=0.305, top=0.254, width=0.139, height=0.050),
+    "setup_slot_3": Region(left=0.540, top=0.254, width=0.139, height=0.050),
+    "setup_slot_4": Region(left=0.778, top=0.252, width=0.135, height=0.054),
+    "setup_slot_5": Region(left=0.070, top=0.518, width=0.139, height=0.050),
+    "setup_slot_6": Region(left=0.305, top=0.518, width=0.139, height=0.050),
+    "setup_slot_7": Region(left=0.540, top=0.518, width=0.139, height=0.050),
+    "setup_slot_8": Region(left=0.772, top=0.518, width=0.139, height=0.050),
+    # The PLAYERS tab header. It's a solid white pill only while that tab is selected, so its brightness
+    # says the slot boxes hold player names (not Match Settings / Holes labels). Pixel check, no OCR.
+    "setup_players_tab": Region(left=0.305, top=0.105, width=0.130, height=0.045),
+    # The HOLES tab header (a white pill while selected) and the FRONT 9 / BACK 9 checkboxes on that
+    # tab (white when checked, an outline when not). Pixel checks, no OCR: they say which nines are in
+    # the round.
+    "setup_holes_tab": Region(left=0.570, top=0.108, width=0.120, height=0.040),
+    # The MATCH SETTINGS tab header (a white pill while selected) and its GAME MODE value. Only a
+    # SCRAMBLE is read from it: leagues leave GSPro on stroke play for their other formats.
+    "setup_match_tab": Region(left=0.440, top=0.108, width=0.120, height=0.040),
+    "setup_game_mode": Region(left=0.360, top=0.285, width=0.170, height=0.042),
+    "setup_front9_box": Region(left=0.074, top=0.221, width=0.018, height=0.028),
+    "setup_back9_box": Region(left=0.074, top=0.491, width=0.018, height=0.028),
+    # GSPro's course-load screen shows the course name big and centered up top. The watcher fires the
+    # opener when this matches the course that was set up (a positive "Play was pressed and it's
+    # loading" signal), so a window popping up over the setup screen can't trigger a spurious opener.
+    "load_course": Region(left=0.20, top=0.10, width=0.60, height=0.10, anchor="middle", aspect=HUD_ASPECT),
+}
+
+
+class PersonaConfig(BaseModel):
+    name: str
+    style: str
+
+
+class LLMConfig(BaseModel):
+    # Cloud by default (OPENAI_API_KEY); `ollama` runs a model on the PC itself instead.
+    provider: Literal["ollama", "anthropic", "openai"] = "openai"
+    model: str = "gpt-6-luna"
+    base_url: str | None = None
+    # Only send screenshots when the model can actually see them.
+    vision: bool = False
+    temperature: float | None = 0.9
+    # Reasoning effort, for providers that take it. Anthropic (not Haiku 4.5): low/medium/high, and
+    # xhigh/max on Haiku 5.5 and the 5-series. OpenAI reasoning models (gpt-6): none/low/medium/high/
+    # xhigh, where "none" skips reasoning for the lowest latency. Higher effort trades latency for
+    # quality; for the booth's short commentary the fast settings ("low", or "none" on OpenAI) win.
+    effort: Literal["none", "low", "medium", "high", "xhigh", "max"] | None = "none"
+    # Ollama only. Thinking models (Qwen3, Gemma 4) otherwise spend the whole token budget
+    # reasoning and return nothing. Harmless on models without a thinking mode.
+    ollama_think: bool = False
+    # Roomy by default so the pre-shot BRANCH call (every flight + result line in one JSON reply) can't
+    # truncate: a cut-off reply fails json.loads and loses ALL branches for that shot. It is an upper
+    # bound, not a target, so the short calls that set it lower (e.g. live=400) are unaffected.
+    max_tokens: int = 900
+    timeout_seconds: float = 30.0
+    # OpenAI only. "fast" (service_tier) buys up to 2.5x faster, more consistent latency at ~2x the
+    # per-token price - trivial on gpt-6-luna, which is already cheap, so it's worth it on every call.
+    service_tier: Literal["auto", "default", "fast", "priority", "flex"] | None = "fast"
+
+
+class LLMSection(BaseModel):
+    live: LLMConfig = Field(default_factory=LLMConfig)
+    # Between-hole segments. Falls back to `live` when omitted.
+    segment: LLMConfig | None = None
+    # The pre-shot BRANCH call (all flight + result lines, written at setup) and the mid-flight
+    # fallback. Speed matters most, and the branch JSON is large (8 flight + 10 result lines), so it
+    # needs the roomy max_tokens (~900) the default gives - `live` is capped lower for the short spoken
+    # line and would truncate the branch reply. Falls back to `live`, so set `flight` explicitly.
+    flight: LLMConfig | None = None
+    # Lines while the player sets up. Falls back to `live`.
+    preshot: LLMConfig | None = None
+    # The round's opener and wrap-up. Falls back to `segment` with room for a longer reply.
+    # `round` is the shared fallback for both; `opener` and `closer` override it individually. The
+    # opener wants a fast model (it's raced against a quick course load); the closer is pre-fetched on
+    # the last hole, so it can take a richer, slower model with the latency fully hidden.
+    round: LLMConfig | None = None
+    opener: LLMConfig | None = None
+    closer: LLMConfig | None = None
+
+
+class TTSConfig(BaseModel):
+    # Cloud voices by default (OPENAI_API_KEY); `kokoro` voices on the PC's CPU instead.
+    provider: Literal["kokoro", "openai", "console"] = "openai"
+    # Persona key -> provider voice id. Each provider has its own voice ids, so they're kept apart:
+    # flipping `provider` is then the whole toggle, with no voice edits (and an easy switch back).
+    voices: dict[str, str] = Field(default_factory=lambda: {"pbp": "bm_george", "color": "am_michael"})
+    openai_voices: dict[str, str] = Field(default_factory=lambda: {"pbp": "fable", "color": "ballad"})
+    speed: float = 1.0
+    kokoro_model: str = "models/kokoro-v1.0.onnx"
+    kokoro_voices: str = "models/voices-v1.0.bin"
+    openai_model: str = "gpt-4o-mini-tts"
+    # Persona key -> delivery instructions for the OpenAI voice (gpt-4o-mini-tts `instructions`):
+    # steers tone/pacing/emotion, not the words. Only the gpt-4o models honor it; tts-1 ignores it.
+    openai_instructions: dict[str, str] = Field(default_factory=lambda: {
+        "pbp": (
+            "Voice Affect: Polished, warm, and authoritative; the lead voice of a televised golf "
+            "broadcast, assured but never showy.\n"
+            "Tone: Refined and measured, with a light British inflection; genuinely engaged, quietly "
+            "delighted by a fine shot and sympathetic to a poor one.\n"
+            "Pacing: Unhurried and even; let a good shot breathe, lift and quicken just a touch on the "
+            "big moments, then settle back.\n"
+            "Emotion: Understated enthusiasm and real warmth for the golf; rising naturally on a great "
+            "strike or a made putt, never over-excited.\n"
+            "Pronunciation: Crisp and clear, landing the numbers and the players' and teams' names "
+            "cleanly; crisp consonants, rounded vowels.\n"
+            "Pauses: a brief, deliberate pause only before a result. Keep direct address tight: barely a "
+            "breath before a name like 'Duke' at the end of a line, never a long beat handing over."
+        ),
+        "color": (
+            "Voice Affect: Dry, sharp, and quick; a wry color analyst who needles the players and enjoys "
+            "the mischief, not a cheerleader.\n"
+            "Tone: Deadpan-leaning and plain-spoken American, amused and a touch sardonic; the wit is in "
+            "the understatement, never gushing.\n"
+            "Pacing: Brisk and snappy; get in, land the line, get out. Keep it moving, clip the words, no "
+            "drawl and no dwelling.\n"
+            "Emotion: Understated; a flat, knowing delivery on the jabs, a quick flash of genuine respect "
+            "for a great shot, then straight back to dry.\n"
+            "Pronunciation: Crisp and clipped, consonants sharp; land the needle cleanly.\n"
+            "Pauses: One tight beat before the punchline, then move on; never let a line sag."
+        ),
+    })
+    # Console provider: pause roughly as long as the line would take to say.
+    console_simulate_duration: bool = True
+    # Deadlines for a cloud voice (openai), whose requests sometimes stall for 30 s+ while the next
+    # one answers in ~1 s. A comment is useless once its moment has passed, so lines get a deadline and
+    # are dropped, never played late, when they miss it.
+    # A request still unanswered after this long gets a second one sent alongside it (a normal line
+    # voices in ~1-2 s); whichever answers first is used.
+    hedge_after_seconds: float = 2.5
+    # Lines voiced ahead (flight/result branches at setup, wraps, the closer) keep hedging up to this
+    # long; the moment they were voiced for (impact, the hole-out) usually ends it sooner.
+    prepare_deadline_seconds: float = 12.0
+    # A line voiced on demand must be ready within this long of its turn to be voiced, or it's dropped.
+    live_deadline_seconds: float = 5.0
+    # A mid-flight call must start playing within this long of impact, while the ball is still in the
+    # air; one voiced on demand that can't be ready by then is dropped.
+    flight_audio_deadline_seconds: float = 4.0
+
+    @property
+    def active_voices(self) -> dict[str, str]:
+        """The persona->voice map for the provider in use (voice ids differ by provider)."""
+        return self.openai_voices if self.provider == "openai" else self.voices
+
+    @property
+    def active_instructions(self) -> dict[str, str]:
+        """Per-persona delivery instructions, only for the OpenAI provider; empty otherwise."""
+        return self.openai_instructions if self.provider == "openai" else {}
+
+
+class ScreenConfig(BaseModel):
+    monitor: int = 1
+    # "monitor" grabs the framebuffer and never touches GSPro's render path; "window" captures
+    # GSPro's own window via PrintWindow so a popup in front can't corrupt the read, but it forces
+    # the game to render synchronously each grab and can stutter/freeze it, so it's off by default.
+    capture: Literal["monitor", "window"] = "monitor"
+    window_title: str = "GSPro"
+    # Cap OCR (onnxruntime) threads so it can't grab every core and starve GSPro. None = all cores.
+    ocr_threads: int | None = 6
+    # Shrink each region before OCR: a high-res HUD reads fine smaller and far faster, which is
+    # what lets the booth keep up while following a shot. 1.0 = full size.
+    ocr_scale: float = 1.0
+    # After impact the HUD is polled to follow the ball: CARRY (game) counts up until touchdown,
+    # Total Length until it stops, and about 1-2 s later GSPro moves on to the next shot.
+    follow_poll_seconds: float = 0.3
+    # A normal shot's flight and roll finish well inside this; the cap only bites on odd outcomes
+    # (a water penalty, a lost ball) where the stop is never cleanly seen, so keep it short.
+    follow_max_seconds: float = 12.0
+    # Saves a small screenshot at impact and at the final reading of every shot under
+    # log_dir/shots/, for checking what the booth read against what was on screen. ~150 KB each.
+    save_review_images: bool = False
+    send_images: bool = False
+    image_max_width: int = 1024
+    ocr: bool = True
+    # Named screen rectangles to OCR: player_box, hole_box, tiles, tiles_left, lie, slope, club.
+    # Regions set in the config replace those defaults one by one; the rest keep their default.
+    regions: dict[str, Region] = Field(default_factory=lambda: dict(DEFAULT_REGIONS))
+
+    @field_validator("regions", mode="after")
+    @classmethod
+    def _merge_defaults(cls, regions: dict[str, Region]) -> dict[str, Region]:
+        return {**DEFAULT_REGIONS, **regions}
+    # How often the HUD is polled for new shots and holes.
+    hud_poll_seconds: float = 1.0
+
+
+class SquabbitConfig(BaseModel):
+    # Pull live handicaps from Squabbit at the start of each round. Needs SQUABBIT_EMAIL and
+    # SQUABBIT_PASSWORD in the booth .env; the invite code comes from the league file
+    # ("squabbit_invite"). Off by default so the booth never needs a login.
+    enabled: bool = False
+    # Keep a slow or unreachable Squabbit from stalling the opener; the file handicaps stand in.
+    timeout_seconds: float = 15.0
+
+
+class SourceConfig(BaseModel):
+    # connector_log: follow GSPconnect's debug log (Uneekor and other built-in connectors). Falls
+    #   back to gspro_log when that log doesn't exist.
+    # gspro_log: read each shot from GSPro's own log. Works with any launch monitor; ball data only
+    #   (no club speed, path, face or strike location).
+    # gspro_sniffer: capture Open Connect traffic on port 921 (third-party connectors; needs Npcap).
+    type: Literal["connector_log", "gspro_log", "gspro_sniffer", "replay"] = "connector_log"
+    connector_log: str = r"C:\GSProV1\Core\GSPC\ConnectDebug.txt"
+    # GSPro's own Unity log, tailed alongside the shot feed for game truth OCR only guesses at:
+    # strokes taken (penalties included), lie, distance to pin, whose turn, and holed shots. On by
+    # default: stats, round ends and range detection depend on it. Off falls back to OCR guesses.
+    # See sources/gspro_log.py.
+    gspro_log: str = str(Path.home() / "AppData" / "LocalLow" / "GSPro" / "GSPro" / "output_log.txt")
+    gspro_log_truth: bool = True
+    # GSPro keeps courses in two libraries; each folder holds the par, stroke index and yardages.
+    gspro_courses_dirs: list[str] = Field(default_factory=lambda: [
+        r"C:\GSProV1\Courses", r"C:\GSProV1\Core\GSP\Courses"])
+    port: int = 921
+    # Defaults to scapy's loopback adapter (Npcap loopback on Windows).
+    iface: str | None = None
+    replay_file: str = "data/sample_shots.jsonl"
+    replay_speed: float = 1.0
+
+
+class CommentaryConfig(BaseModel):
+    # Off: no commentary at all (no model or voice calls, no API keys needed), but every shot and
+    # round is still read from GSPro and recorded in the database. `run --no-commentary` flips it.
+    enabled: bool = True
+    interest_threshold: float = 0.5
+    # Chance of a line on an unremarkable shot.
+    routine_comment_rate: float = 0.3
+    min_seconds_between_comments: float = 4.0
+    # Lines shown to the model so it doesn't repeat itself. A season-wide check in code
+    # catches anything older.
+    recent_lines: int = 30
+    # Reject a generated line that reuses a phrase from recent lines or was said earlier this season.
+    # Off lets phrasing recur (the model still sees recent lines and mostly varies on its own); on
+    # forces a retry when it doesn't, which can be too eager and drop otherwise-good lines.
+    block_repeats: bool = True
+    max_words_per_line: int = 18
+    segments_on_hole_change: bool = True
+    # Before voicing the between-holes wrap, wait up to this long for the hole's last shot handler to
+    # finish, so the final-shot reaction and the wrap don't talk over each other. Bounded so a slow
+    # shot handler can't hold the booth off air.
+    wrap_wait_seconds: float = 5.0
+    # Drop queued lines once speech falls this far behind play.
+    max_speech_backlog: int = 4
+    in_flight: bool = True
+    # Play a pre-written result line (voiced at setup) the instant the ball stops on routine shots,
+    # with no model call. Keeps putts and approaches instant and commentary from falling behind.
+    pre_reactions: bool = True
+    # GSPro's hole-result banner appears ~1-1.5s after a putt settles (during the hole-end
+    # transition) and stays up ~2s, so the booth polls for it across this window to confirm a make.
+    hole_result_window_seconds: float = 3.0
+    # A mid-flight line that can't start speaking this soon after impact is dropped: the ball
+    # has usually landed by then, and "needs legs" after it lands sounds broken.
+    flight_deadline_seconds: float = 3.0
+    # Skip mid-flight calls for chips and putts; they're on the ground too fast.
+    min_flight_carry: float = 50.0
+    preshot: bool = True
+    # Not every shot needs a setup line; this keeps the booth from narrating every address.
+    preshot_rate: float = 0.6
+    # The player box must hold steady this long before it counts as a new setup. Kept short: the
+    # whole pre-shot plan (settle + Haiku vision call) has to finish before the swing, or the
+    # instant pre-written flight line can't play. A phantom setup from a flickered read is cheap.
+    preshot_settle_seconds: float = 1.0
+    # Flat starting penalty for a lie (GSPro carry / launch monitor carry), replacing the
+    # built-in curves until the season database has enough shots from that lie to learn it.
+    lie_carry_factors: dict[str, float] = Field(default_factory=dict)
+    # Course name as GSPro shows it -> altitude in feet, for a course with no shots yet.
+    course_altitude_ft: dict[str, float] = Field(default_factory=dict)
+    # A shot this interesting (0..1, from the interest scorer) gets a three- or four-line exchange.
+    big_moment_threshold: float = 0.9
+    # An approach from at least this far that GSPro's log says finished this close is a big moment.
+    close_approach_from_yards: float = 100.0
+    close_approach_feet: float = 15.0
+    # Rounds: an opener when everyone is on the first tee, a wrap-up when the round is done.
+    opener: bool = True
+    closer: bool = True
+    round_holes: int = 9
+    # Tonight's format (scramble, best ball, team sum, alternate shot). Beats the league file's
+    # schedule; leave unset to take it from the schedule week whose course GSPro is showing.
+    round_format: str | None = None
+    # Force a schedule week (format, nine and CTP holes) when the course can't be matched.
+    round_week: int | None = None
+    # With no final scorecard seen, the round counts as over once the last hole has been putted
+    # on and nothing has happened for this long.
+    round_end_idle_seconds: float = 60.0
+    # A fresh opening tee (everyone on shot 1 at even par) supersedes a round still tracked as in
+    # progress once this much time has passed since that round's last activity, so abandoning a
+    # round and starting another still opens the broadcast even without a clean finish. A scorecard
+    # showing no holes played supersedes it immediately, regardless of this.
+    round_restart_idle_seconds: float = 180.0
+    # Build the first-hole opener early: read the course and roster off GSPro's setup screen, compose
+    # and ground the opener while the course loads, then air it the instant the tee HUD confirms the
+    # same course and the same league team(s). Needs the setup-screen regions calibrated (see
+    # `calibrate --out setup`). Off until then; when off the opener is made at the tee as before.
+    preround: bool = False
+    # How often to read the setup screen. Fast, so even a quick glance at the Players tab is caught;
+    # affordable because an idle poll OCRs only one gate region (see _watch_setup) and it pauses
+    # mid-round and once an opener is prepared.
+    preround_poll_seconds: float = 0.3
+    # A prepared opener this old is dropped (the course never loaded, or the player backed out).
+    preround_ttl_seconds: float = 900.0
+
+
+class OverlayConfig(BaseModel):
+    # A small always-on-top "ON AIR" badge over GSPro (a pulsing red dot). Click it to take the booth
+    # off air (commentary off, shots and rounds still recorded) and back on. Changes the running booth
+    # only; `commentary.enabled` still decides how it starts. Only shown by `run` on a live source.
+    enabled: bool = True
+    # Where the badge's top-left corner sits, as fractions of the primary screen measured on a 16:10
+    # screen; on another shape it moves with GSPro's HUD (see overlay.badge_geometry). The default is
+    # the top strip between GSPro's wind readout and the hole box, clear of every OCR region.
+    left: float = 0.595
+    top: float = 0.008
+    # Badge size relative to the default (which, like GSPro's HUD, scales with the screen width).
+    scale: float = 1.0
+
+
+class HealthConfig(BaseModel):
+    # Checks that the booth still reads GSPro the way it was built to (see commentator/health.py): the
+    # files it follows exist, GSPro's version and the screen size haven't changed (checked at startup
+    # and every round start), and after each round, that the HUD reads, data tiles and log lines all
+    # came through. Anything off lights a warning chip on the ON AIR badge (hover it for the list,
+    # right-click to dismiss until something changes) and goes to log_dir/health.json.
+    enabled: bool = True
+    # Data tiles the booth needs on screen (labels as OCR reads them, lowercase). The carry tiles drive
+    # the carry model and the reaction; Total Length says when the ball stopped.
+    required_tiles: list[str] = Field(default_factory=lambda: ["carry (game)", "carry (raw)", "total length"])
+
+
+class NotifyConfig(BaseModel):
+    # Push health issues to a phone through ntfy (https://ntfy.sh): install the ntfy app, subscribe to a
+    # hard-to-guess topic, and put that topic in .env as NTFY_TOPIC (the topic is the only secret, so
+    # it stays out of this file); with no NTFY_TOPIC nothing is sent. "none" turns pushes off.
+    provider: str = "ntfy"
+    server: str = "https://ntfy.sh"
+    # Which issue levels push ("fail": a read the booth depends on broke; "warn": worth a look).
+    levels: list[str] = Field(default_factory=lambda: ["fail", "warn"])
+    # Also push when everything that was pushed has cleared.
+    cleared: bool = True
+    # Issues raised together (one check finding several things) go out as one push after this wait.
+    gather_seconds: float = 5.0
+    # The same unchanged issue isn't pushed again within this many hours.
+    repeat_hours: float = 12.0
+
+
+class NewsConfig(BaseModel):
+    # On an ordinary shot it would otherwise pass on, the booth sometimes takes a breather to riff on
+    # a real, current golf headline instead of going quiet. The headline is fetched live and handed
+    # to the model verbatim, because the model's own sense of current events is stale. Off by default.
+    enabled: bool = False
+    # Public RSS/Atom feeds. ESPN's golf feed needs no key; add tour or outlet feeds here.
+    feeds: list[str] = Field(default_factory=lambda: ["https://www.espn.com/espn/rss/golf/news"])
+    # Headlines kept in rotation after a fetch.
+    limit: int = 12
+    # Re-fetch the feeds this often during a long session (golf news moves slowly).
+    refresh_hours: float = 6.0
+    # Golf-world asides per nine holes. Each is written (by the closer's model) and voiced at round
+    # start, then held for a quiet moment, or for the kind of shot its story is about.
+    per_nine: int = 2
+    # Chance, on an ordinary shot the booth would otherwise skip, of playing an aside that isn't
+    # waiting on a particular kind of shot (one every three holes at most either way).
+    banter_rate: float = 0.35
+
+
+class MinimapConfig(BaseModel):
+    """Where the pre-shot hazard read comes from. "llm" is the preshot vision model reading the whole
+    screenshot (needs llm.preshot.vision and screen.send_images); "jev" is TypeSafe's Jev reading just
+    the minimap region: about a third of a second instead of several, and it also reads the carry over
+    water and the front and back of the green. Needs the jev extra and TYPESAFE_API_KEY; if Jev fails
+    or is late, the llm read is used when it's available."""
+
+    provider: Literal["llm", "jev"] = "llm"
+    model: str = "jev-latest"
+    # Finding the ball and pin dots needs Jev's Box questions, which only the preview model answers.
+    box_model: str = "jev-preview"
+    # A yes needs at least this probability to become a fact; a doubtful read says nothing.
+    threshold: float = 0.7
+    # Below this the ball or pin box is likely wrong (another player's dot), so no left/right reads.
+    box_confidence: float = 0.6
+    # A sand-coloured patch near the line counts as a bunker only when Jev is at least this sure.
+    sand_threshold: float = 0.85
+    # The same for a leafy patch near the line being a tree (or a tree line).
+    tree_threshold: float = 0.85
+    # A multiple-choice read (which side of the green the pin is on; a dogleg) needs this confidence.
+    choice_confidence: float = 0.8
+    # Below this a yardage read is dropped.
+    number_confidence: float = 0.5
+    timeout_seconds: float = 1.5
+
+
+class PuttReadConfig(BaseModel):
+    """Reads a putt's break from the drift of GSPro's green-grid dots over a quick burst of frames
+    (needs the grid showing on the green, and screen.capture: monitor)."""
+
+    enabled: bool = False
+    frames: int = 20
+    interval_seconds: float = 0.04
+    # The read must land within this long of the setup, or the pre-shot line goes without it.
+    timeout_seconds: float = 2.5
+    # A section needs this many matched dot moves before it says anything.
+    min_steps: int = 6
+    # The share of those moves that must agree on a direction.
+    slope_share: float = 0.7
+    # Mean sideways drift, in pixels per frame on a 4K screen: below gentle_px it's silent (a flat
+    # putt still shows up to about 1.4 near the hole); then "a little", plain, "hard", "severely".
+    gentle_px: float = 1.5
+    moderate_px: float = 2.0
+    hard_px: float = 4.0
+    severe_px: float = 8.0
+    # Mean drift toward or away from the golfer to call it uphill or downhill: the view foreshortens
+    # it, so a flat putt showed 0.6 and a steep uphill one 0.75; a gentle slope stays silent.
+    slope_px: float = 0.7
+
+
+class Config(BaseModel):
+    # Optional. None = no league: every round is practice, players go by their GSPro names.
+    league_file: str | None = None
+    # Earlier seasons and this season's standings, from `import-league`. Optional.
+    history_file: str = "data/history.json"
+    personas: dict[str, PersonaConfig] = Field(
+        default_factory=lambda: {
+            "pbp": PersonaConfig(name="Nigel", style="Calm, polished play-by-play voice."),
+            "color": PersonaConfig(name="Duke", style="Opinionated color analyst; warm, quick wit and real enthusiasm, playful with the needle, clearly having fun."),
+        }
+    )
+    llm: LLMSection = Field(default_factory=LLMSection)
+    tts: TTSConfig = Field(default_factory=TTSConfig)
+    screen: ScreenConfig = Field(default_factory=ScreenConfig)
+    source: SourceConfig = Field(default_factory=SourceConfig)
+    squabbit: SquabbitConfig = Field(default_factory=SquabbitConfig)
+    commentary: CommentaryConfig = Field(default_factory=CommentaryConfig)
+    news: NewsConfig = Field(default_factory=NewsConfig)
+    overlay: OverlayConfig = Field(default_factory=OverlayConfig)
+    health: HealthConfig = Field(default_factory=HealthConfig)
+    notify: NotifyConfig = Field(default_factory=NotifyConfig)
+    minimap: MinimapConfig = Field(default_factory=MinimapConfig)
+    putt_read: PuttReadConfig = Field(default_factory=PuttReadConfig)
+    log_dir: str = "logs"
+    # Season history: every shot and line. Replays and evals never write to it.
+    db_path: str = "logs/season.db"
+    # Keep the booth from stealing CPU from GSPro: run it below normal priority so GSPro always
+    # wins contention, and optionally pin it to at most this many cores (None = no limit).
+    process_priority: Literal["below_normal", "normal", "idle"] = "below_normal"
+    max_cpu_cores: int | None = None
+
+    @property
+    def segment_llm(self) -> LLMConfig:
+        return self.llm.segment or self.llm.live
+
+    @property
+    def flight_llm(self) -> LLMConfig:
+        return self.llm.flight or self.llm.live
+
+    @property
+    def preshot_llm(self) -> LLMConfig:
+        return self.llm.preshot or self.llm.live
+
+    @property
+    def round_llm(self) -> LLMConfig:
+        if self.llm.round:
+            return self.llm.round
+        return self.segment_llm.model_copy(update={"max_tokens": max(self.segment_llm.max_tokens, 900)})
+
+    @property
+    def opener_llm(self) -> LLMConfig:
+        return self.llm.opener or self.round_llm
+
+    @property
+    def closer_llm(self) -> LLMConfig:
+        return self.llm.closer or self.round_llm
+
+
+def load_config(path: str | Path) -> Config:
+    with open(path, encoding="utf-8-sig") as f:  # tolerate a Windows byte-order mark
+        return Config.model_validate(yaml.safe_load(f) or {})

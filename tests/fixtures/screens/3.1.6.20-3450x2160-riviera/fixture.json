@@ -1,0 +1,118 @@
+{
+ "captured": "2026-10-16 14:43:26",
+ "gspro_version": "3.1.6.20",
+ "course": "Riviera",
+ "size": [
+  3450,
+  2160
+ ],
+ "regions": {
+  "player_box": {
+   "left": 0.0,
+   "top": 0.0,
+   "width": 0.32,
+   "height": 0.086,
+   "anchor": "top",
+   "aspect": 1.6
+  },
+  "hole_box": {
+   "left": 0.76,
+   "top": 0.0,
+   "width": 0.22,
+   "height": 0.1,
+   "anchor": "top",
+   "aspect": 1.6
+  },
+  "tiles": {
+   "left": 0.85,
+   "top": 0.08,
+   "width": 0.15,
+   "height": 0.4,
+   "anchor": "top",
+   "aspect": 1.6
+  },
+  "tiles_left": {
+   "left": 0.0,
+   "top": 0.08,
+   "width": 0.16,
+   "height": 0.4,
+   "anchor": "top",
+   "aspect": 1.6
+  },
+  "lie": {
+   "left": 0.84,
+   "top": 0.45,
+   "width": 0.16,
+   "height": 0.53,
+   "anchor": "bottom",
+   "aspect": 1.6
+  },
+  "club": {
+   "left": 0.0,
+   "top": 0.84,
+   "width": 0.1,
+   "height": 0.14,
+   "anchor": "bottom",
+   "aspect": 1.6
+  }
+ },
+ "boxes": {
+  "player_box": [
+   0,
+   0,
+   1104,
+   185
+  ],
+  "hole_box": [
+   2622,
+   0,
+   759,
+   216
+  ],
+  "tiles": [
+   2932,
+   173,
+   518,
+   862
+  ],
+  "tiles_left": [
+   0,
+   173,
+   552,
+   862
+  ],
+  "lie": [
+   2898,
+   974,
+   552,
+   1143
+  ],
+  "club": [
+   0,
+   1815,
+   345,
+   302
+  ]
+ },
+ "expected": {
+  "player_text": "Josh 2nd (E) Shot 2 93.6 YDS 2FT 7",
+  "shot_number": 2,
+  "to_pin": "93.6 yards",
+  "score_to_par": "E",
+  "course": "Riviera",
+  "par": 4,
+  "hole_length": "257 yards",
+  "hole_number": 10,
+  "lie": "deep rough",
+  "club": "GW",
+  "handed": "RH",
+  "tiles": {
+   "ball speed": "133.1",
+   "carry (game)": "156.1",
+   "carry (raw)": "140.8",
+   "club speed": "91.8",
+   "total length": "197.3",
+   "total spin": "1695"
+  }
+ }
+}

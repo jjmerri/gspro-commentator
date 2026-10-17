@@ -1,0 +1,167 @@
+{
+ "captured": "2026-10-16 15:25:25",
+ "kind": "setup_players",
+ "gspro_version": "3.1.6.20",
+ "size": [
+  3450,
+  2160
+ ],
+ "regions": {
+  "setup_course": {
+   "left": 0.797,
+   "top": 0.922,
+   "width": 0.165,
+   "height": 0.064,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_players_tab": {
+   "left": 0.305,
+   "top": 0.105,
+   "width": 0.13,
+   "height": 0.045,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_1": {
+   "left": 0.07,
+   "top": 0.254,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_2": {
+   "left": 0.305,
+   "top": 0.254,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_3": {
+   "left": 0.54,
+   "top": 0.254,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_4": {
+   "left": 0.778,
+   "top": 0.252,
+   "width": 0.135,
+   "height": 0.054,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_5": {
+   "left": 0.07,
+   "top": 0.518,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_6": {
+   "left": 0.305,
+   "top": 0.518,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_7": {
+   "left": 0.54,
+   "top": 0.518,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_slot_8": {
+   "left": 0.772,
+   "top": 0.518,
+   "width": 0.139,
+   "height": 0.05,
+   "anchor": "top",
+   "aspect": null
+  }
+ },
+ "boxes": {
+  "setup_course": [
+   2750,
+   1992,
+   569,
+   138
+  ],
+  "setup_players_tab": [
+   1052,
+   227,
+   448,
+   97
+  ],
+  "setup_slot_1": [
+   242,
+   549,
+   480,
+   108
+  ],
+  "setup_slot_2": [
+   1052,
+   549,
+   480,
+   108
+  ],
+  "setup_slot_3": [
+   1863,
+   549,
+   480,
+   108
+  ],
+  "setup_slot_4": [
+   2684,
+   544,
+   466,
+   117
+  ],
+  "setup_slot_5": [
+   242,
+   1119,
+   480,
+   108
+  ],
+  "setup_slot_6": [
+   1052,
+   1119,
+   480,
+   108
+  ],
+  "setup_slot_7": [
+   1863,
+   1119,
+   480,
+   108
+  ],
+  "setup_slot_8": [
+   2663,
+   1119,
+   480,
+   108
+  ]
+ },
+ "expected": {
+  "course": "BALSAMS PANORAMA",
+  "players_tab": true,
+  "slots": [
+   "Alex",
+   "Jamie",
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ]
+ }
+}

@@ -1,0 +1,218 @@
+GSPro Version: 3.1.6.20
+Selected Course: riviera_gsp
+Loading course Riviera
+Skipping hole 1
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 85.55037 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 40.66138 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGdeeprough, Spin53%, Speed 81%, VLA 98%
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 2.83382 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 0.7576046 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 242.22 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin81%, Speed 90%, VLA 100%
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 67.5864 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 4.108645 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 0.2492906 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 143.1686 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGdeeprough, Spin54%, Speed 79%, VLA 98%
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 39.00063 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGdeeprough, Spin53%, Speed 81%, VLA 98%
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 9.873633 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 1.01324 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 105.6272 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGdeeprough, Spin53%, Speed 80%, VLA 98%
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 15.95545 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin63%, Speed 95%, VLA 100%
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 4.270129 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 0.6622367 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGsand
+ActivePlayer: 0  currentHole: 13  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 16.28902 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGsand, Spin73%, Speed 77%, VLA 100%
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 13  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 1.463351 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 13  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 203.2067 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 51.21647 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin71%, Speed 91%, VLA 100%
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 3.708852 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 0.6351461 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 15  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 5.220559 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 15  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 0.7254261 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 15  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 262.6707 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGsand, Spin100%, Speed 93%, VLA 100%
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 95.10333 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin77%, Speed 93%, VLA 100%
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 9.756986 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 163.6736 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 22.96182 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin64%, Speed 95%, VLA 100%
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 3.001844 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 3
+Round Is Complete
+[{"active":false,"played":false,"par":5,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1121.238,"y":74.00064,"z":1494.12646,"normalized":{"x":0.5997499,"y":0.0395829231,"z":0.799207866,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1869.50928,"sqrMagnitude":3495064.75},"teeIndex":3,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":1362.59424,"y":57.59763,"z":1540.07,"normalized":{"x":0.662375331,"y":0.027998982,"z":0.7486487,"normalized":{"x":0.6623754,"y":0.0279989839,"z":0.748648763,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":2057.133,"sqrMagnitude":4231796.0},"ShotWPPos1":{"x":1510.62463,"y":57.993042,"z":1555.56909,"normalized":{"x":0.696418166,"y":0.0267355666,"z":0.7171381,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":2169.13452,"sqrMagnitude":4705145.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1573.60266,"y":58.7864571,"z":1517.91858,"normalized":{"x":0.7194663,"y":0.0268777348,"z":0.694007039,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":2187.18042,"sqrMagnitude":4783758.0},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1318.59741,"y":55.31267,"z":1436.88892,"normalized":{"x":0.675856531,"y":0.0283509046,"z":0.7364877,"normalized":{"x":0.6758566,"y":0.0283509064,"z":0.736487746,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1951.002,"sqrMagnitude":3806408.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1045.33618,"y":60.00811,"z":1395.67676,"normalized":{"x":0.599123538,"y":0.03439302,"z":0.7999176,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1744.77576,"sqrMagnitude":3044242.25},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":961.556458,"y":46.291626,"z":1154.91748,"normalized":{"x":0.639537454,"y":0.0307888631,"z":0.7681432,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1503.51855,"sqrMagnitude":2260568.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":822.7255,"y":44.4207764,"z":1070.34912,"normalized":{"x":0.609092534,"y":0.03288626,"z":0.792417,"normalized":{"x":0.6090926,"y":0.032886263,"z":0.792417049,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1350.73975,"sqrMagnitude":1824497.75},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":666.107239,"y":41.9999542,"z":892.9039,"normalized":{"x":0.5975221,"y":0.0376754664,"z":0.8009668,"normalized":{"x":0.59752214,"y":0.03767547,"z":0.800966859,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1114.78259,"sqrMagnitude":1242740.13},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":494.14624,"y":30.29132,"z":735.12854,"normalized":{"x":0.5575439,"y":0.0341776162,"z":0.8294436,"normalized":{"x":0.557543933,"y":0.03417762,"z":0.829443634,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":886.2912,"sqrMagnitude":785512.063},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":364.9139,"y":23.0025368,"z":592.7106,"normalized":{"x":0.5239874,"y":0.033029817,"z":0.851085365,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":696.4173,"sqrMagnitude":484997.1},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":508.111267,"y":25.51305,"z":451.925049,"normalized":{"x":0.746686339,"y":0.03749227,"z":0.6641188,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":680.4882,"sqrMagnitude":463064.219},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":690.6886,"y":27.4949951,"z":615.591553,"normalized":{"x":0.746195734,"y":0.0297046285,"z":0.6650635,"normalized":{"x":0.7461958,"y":0.02970463,"z":0.66506356,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":925.613159,"sqrMagnitude":856759.7},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":786.3095,"y":31.7519283,"z":592.137939,"normalized":{"x":0.79841,"y":0.03224056,"z":0.60125035,"normalized":{"x":0.798410058,"y":0.0322405621,"z":0.6012504,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":984.844238,"sqrMagnitude":969918.2},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":928.659546,"y":33.9693947,"z":785.5277,"normalized":{"x":0.763194561,"y":0.027916858,"z":0.6455654,"normalized":{"x":0.7631946,"y":0.02791686,"z":0.64556545,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1216.80579,"sqrMagnitude":1480616.25},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1044.92175,"y":40.9980774,"z":926.2475,"normalized":{"x":0.74800086,"y":0.0293482225,"z":0.6630486,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1396.95264,"sqrMagnitude":1951476.75},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1067.598,"y":47.746582,"z":1192.68066,"normalized":{"x":0.6666589,"y":0.0298152324,"z":0.7447664,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1601.41577,"sqrMagnitude":2564532.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":4,"strokeIdx":8,"pinPos":{"x":1171.79211,"y":47.4749451,"z":1134.60986,"normalized":{"x":0.718108833,"y":0.0290940478,"z":0.695322454,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1631.77515,"sqrMagnitude":2662690.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1116.67371,"y":54.62342,"z":1362.35107,"normalized":{"x":0.633620858,"y":0.0309943166,"z":0.773022652,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1762.3689,"sqrMagnitude":3105944.25},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1163.81128,"y":48.31134,"z":1207.67017,"normalized":{"x":0.693622947,"y":0.0287932046,"z":0.719762564,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1677.873,"sqrMagnitude":2815258.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":5,"strokeIdx":5,"pinPos":{"x":1538.70386,"y":56.5302,"z":1465.24463,"normalized":{"x":0.7239258,"y":0.0265961979,"z":0.6893649,"normalized":{"x":0.7239259,"y":0.0265962,"z":0.68936497,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":2125.49927,"sqrMagnitude":4517747.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1225.12329,"y":45.69979,"z":1145.05542,"normalized":{"x":0.7303059,"y":0.027242016,"z":0.6825768,"normalized":{"x":0.73030597,"y":0.0272420179,"z":0.682576835,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1677.5481,"sqrMagnitude":2814167.5},"teeIndex":3,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":1364.69482,"y":50.7813721,"z":1288.18127,"normalized":{"x":0.726932466,"y":0.0270497315,"z":0.686175942,"normalized":{"x":0.7269325,"y":0.0270497333,"z":0.686176,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1877.33374,"sqrMagnitude":3524381.75},"ShotWPPos1":{"x":1486.38806,"y":54.708313,"z":1413.225,"normalized":{"x":0.7244601,"y":0.0266646314,"z":0.6888007,"normalized":{"x":0.7244602,"y":0.0266646333,"z":0.688800752,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":2051.71826,"sqrMagnitude":4209547.5}},{"active":true,"played":true,"par":4,"strokeIdx":4,"pinPos":{"x":1390.08044,"y":51.0664,"z":1214.23633,"normalized":{"x":0.7528479,"y":0.0276568383,"z":0.6576132,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1846.42932,"sqrMagnitude":3409301.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1590.69507,"y":57.00032,"z":1421.2417,"normalized":{"x":0.745443642,"y":0.0267119259,"z":0.666033149,"normalized":{"x":0.7454437,"y":0.0267119277,"z":0.6660332,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":2133.89038,"sqrMagnitude":4553488.0},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1493.13965,"y":53.194458,"z":1310.793,"normalized":{"x":0.751235068,"y":0.0267634317,"z":0.659491956,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1987.57983,"sqrMagnitude":3950473.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":4,"strokeIdx":3,"pinPos":{"x":1102.54077,"y":41.683773,"z":914.20105,"normalized":{"x":0.7694668,"y":0.0290912427,"z":0.6380239,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1432.86328,"sqrMagnitude":2053097.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1327.82861,"y":46.2994,"z":1156.988,"normalized":{"x":0.7536828,"y":0.0262797922,"z":0.6567127,"normalized":{"x":0.753682852,"y":0.0262797941,"z":0.6567128,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1761.78711,"sqrMagnitude":3103893.75},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1196.79065,"y":43.2485962,"z":1050.66138,"normalized":{"x":0.751219034,"y":0.02714691,"z":0.65949446,"normalized":{"x":0.7512191,"y":0.0271469112,"z":0.6594945,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1593.13147,"sqrMagnitude":2538067.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":3,"strokeIdx":9,"pinPos":{"x":919.416138,"y":36.92005,"z":880.278442,"normalized":{"x":0.722009659,"y":0.0289930031,"z":0.6912752,"normalized":{"x":0.7220097,"y":0.0289930049,"z":0.691275239,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1273.41248,"sqrMagnitude":1621579.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1006.52417,"y":40.8899536,"z":981.8063,"normalized":{"x":0.715539336,"y":0.0290687215,"z":0.69796735,"normalized":{"x":0.7155394,"y":0.0290687233,"z":0.6979674,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1406.665,"sqrMagnitude":1978706.5},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":4,"strokeIdx":1,"pinPos":{"x":592.2312,"y":27.207695,"z":652.2889,"normalized":{"x":0.671880841,"y":0.03086688,"z":0.740015745,"normalized":{"x":0.6718809,"y":0.0308668818,"z":0.7400158,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":881.4527,"sqrMagnitude":776958.8},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":864.1249,"y":37.49906,"z":890.91394,"normalized":{"x":0.695914745,"y":0.0301995128,"z":0.717489064,"normalized":{"x":0.6959148,"y":0.0301995147,"z":0.7174891,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1241.71082,"sqrMagnitude":1541845.63},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":769.835144,"y":31.5134888,"z":728.6764,"normalized":{"x":0.72593385,"y":0.0297163744,"z":0.6871223,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1060.47559,"sqrMagnitude":1124608.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":3,"strokeIdx":7,"pinPos":{"x":456.3101,"y":20.8129368,"z":567.584534,"normalized":{"x":0.6263151,"y":0.0285671018,"z":0.7790465,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":728.5631,"sqrMagnitude":530804.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":579.8759,"y":24.0013065,"z":602.3738,"normalized":{"x":0.6932396,"y":0.0286934786,"z":0.720135748,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":836.472534,"sqrMagnitude":699686.3},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":5,"strokeIdx":6,"pinPos":{"x":850.3975,"y":39.0940933,"z":965.1135,"normalized":{"x":0.660803556,"y":0.0303781629,"z":0.7499439,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1286.91431,"sqrMagnitude":1656148.38},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":513.847961,"y":24.8497238,"z":648.8379,"normalized":{"x":0.6205604,"y":0.0300103463,"z":0.7835841,"normalized":{"x":0.620560467,"y":0.0300103482,"z":0.7835842,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":828.0386,"sqrMagnitude":685647.9},"teeIndex":3,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":643.8212,"y":31.6985474,"z":766.87915,"normalized":{"x":0.6426609,"y":0.03164142,"z":0.7654971,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1001.80548,"sqrMagnitude":1003614.19},"ShotWPPos1":{"x":767.6659,"y":36.55847,"z":872.282837,"normalized":{"x":0.660328746,"y":0.0314467661,"z":0.7503179,"normalized":{"x":0.6603288,"y":0.03144677,"z":0.750317931,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1162.551,"sqrMagnitude":1351524.75}},{"active":true,"played":true,"par":4,"strokeIdx":2,"pinPos":{"x":1041.06226,"y":62.7601662,"z":1431.37012,"normalized":{"x":0.58782655,"y":0.035436973,"z":0.808210433,"normalized":{"x":0.5878266,"y":0.0354369767,"z":0.8082105,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1771.03638,"sqrMagnitude":3136569.75},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":848.8053,"y":45.3489342,"z":1123.00293,"normalized":{"x":0.6026625,"y":0.0321983173,"z":0.797346354,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1408.42554,"sqrMagnitude":1983662.5},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":928.3314,"y":59.5290527,"z":1309.14966,"normalized":{"x":0.5780418,"y":0.0370668061,"z":0.8151649,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1605.99365,"sqrMagnitude":2579215.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}}]
+Round Is Complete
+[{"active":false,"played":false,"par":5,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1121.238,"y":74.00064,"z":1494.12646,"normalized":{"x":0.5997499,"y":0.0395829231,"z":0.799207866,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1869.50928,"sqrMagnitude":3495064.75},"teeIndex":3,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":1362.59424,"y":57.59763,"z":1540.07,"normalized":{"x":0.662375331,"y":0.027998982,"z":0.7486487,"normalized":{"x":0.6623754,"y":0.0279989839,"z":0.748648763,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":2057.133,"sqrMagnitude":4231796.0},"ShotWPPos1":{"x":1510.62463,"y":57.993042,"z":1555.56909,"normalized":{"x":0.696418166,"y":0.0267355666,"z":0.7171381,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":2169.13452,"sqrMagnitude":4705145.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1573.60266,"y":58.7864571,"z":1517.91858,"normalized":{"x":0.7194663,"y":0.0268777348,"z":0.694007039,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":2187.18042,"sqrMagnitude":4783758.0},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1318.59741,"y":55.31267,"z":1436.88892,"normalized":{"x":0.675856531,"y":0.0283509046,"z":0.7364877,"normalized":{"x":0.6758566,"y":0.0283509064,"z":0.736487746,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1951.002,"sqrMagnitude":3806408.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1045.33618,"y":60.00811,"z":1395.67676,"normalized":{"x":0.599123538,"y":0.03439302,"z":0.7999176,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1744.77576,"sqrMagnitude":3044242.25},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":961.556458,"y":46.291626,"z":1154.91748,"normalized":{"x":0.639537454,"y":0.0307888631,"z":0.7681432,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1503.51855,"sqrMagnitude":2260568.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":822.7255,"y":44.4207764,"z":1070.34912,"normalized":{"x":0.609092534,"y":0.03288626,"z":0.792417,"normalized":{"x":0.6090926,"y":0.032886263,"z":0.792417049,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1350.73975,"sqrMagnitude":1824497.75},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":666.107239,"y":41.9999542,"z":892.9039,"normalized":{"x":0.5975221,"y":0.0376754664,"z":0.8009668,"normalized":{"x":0.59752214,"y":0.03767547,"z":0.800966859,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1114.78259,"sqrMagnitude":1242740.13},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":494.14624,"y":30.29132,"z":735.12854,"normalized":{"x":0.5575439,"y":0.0341776162,"z":0.8294436,"normalized":{"x":0.557543933,"y":0.03417762,"z":0.829443634,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":886.2912,"sqrMagnitude":785512.063},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":364.9139,"y":23.0025368,"z":592.7106,"normalized":{"x":0.5239874,"y":0.033029817,"z":0.851085365,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":696.4173,"sqrMagnitude":484997.1},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":508.111267,"y":25.51305,"z":451.925049,"normalized":{"x":0.746686339,"y":0.03749227,"z":0.6641188,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":680.4882,"sqrMagnitude":463064.219},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":690.6886,"y":27.4949951,"z":615.591553,"normalized":{"x":0.746195734,"y":0.0297046285,"z":0.6650635,"normalized":{"x":0.7461958,"y":0.02970463,"z":0.66506356,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":925.613159,"sqrMagnitude":856759.7},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":786.3095,"y":31.7519283,"z":592.137939,"normalized":{"x":0.79841,"y":0.03224056,"z":0.60125035,"normalized":{"x":0.798410058,"y":0.0322405621,"z":0.6012504,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":984.844238,"sqrMagnitude":969918.2},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":928.659546,"y":33.9693947,"z":785.5277,"normalized":{"x":0.763194561,"y":0.027916858,"z":0.6455654,"normalized":{"x":0.7631946,"y":0.02791686,"z":0.64556545,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1216.80579,"sqrMagnitude":1480616.25},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1044.92175,"y":40.9980774,"z":926.2475,"normalized":{"x":0.74800086,"y":0.0293482225,"z":0.6630486,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1396.95264,"sqrMagnitude":1951476.75},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1067.598,"y":47.746582,"z":1192.68066,"normalized":{"x":0.6666589,"y":0.0298152324,"z":0.7447664,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1601.41577,"sqrMagnitude":2564532.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":4,"strokeIdx":8,"pinPos":{"x":1171.79211,"y":47.4749451,"z":1134.60986,"normalized":{"x":0.718108833,"y":0.0290940478,"z":0.695322454,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1631.77515,"sqrMagnitude":2662690.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1116.67371,"y":54.62342,"z":1362.35107,"normalized":{"x":0.633620858,"y":0.0309943166,"z":0.773022652,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1762.3689,"sqrMagnitude":3105944.25},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1163.81128,"y":48.31134,"z":1207.67017,"normalized":{"x":0.693622947,"y":0.0287932046,"z":0.719762564,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1677.873,"sqrMagnitude":2815258.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":5,"strokeIdx":5,"pinPos":{"x":1538.70386,"y":56.5302,"z":1465.24463,"normalized":{"x":0.7239258,"y":0.0265961979,"z":0.6893649,"normalized":{"x":0.7239259,"y":0.0265962,"z":0.68936497,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":2125.49927,"sqrMagnitude":4517747.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1225.12329,"y":45.69979,"z":1145.05542,"normalized":{"x":0.7303059,"y":0.027242016,"z":0.6825768,"normalized":{"x":0.73030597,"y":0.0272420179,"z":0.682576835,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1677.5481,"sqrMagnitude":2814167.5},"teeIndex":3,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":1364.69482,"y":50.7813721,"z":1288.18127,"normalized":{"x":0.726932466,"y":0.0270497315,"z":0.686175942,"normalized":{"x":0.7269325,"y":0.0270497333,"z":0.686176,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1877.33374,"sqrMagnitude":3524381.75},"ShotWPPos1":{"x":1486.38806,"y":54.708313,"z":1413.225,"normalized":{"x":0.7244601,"y":0.0266646314,"z":0.6888007,"normalized":{"x":0.7244602,"y":0.0266646333,"z":0.688800752,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":2051.71826,"sqrMagnitude":4209547.5}},{"active":true,"played":true,"par":4,"strokeIdx":4,"pinPos":{"x":1390.08044,"y":51.0664,"z":1214.23633,"normalized":{"x":0.7528479,"y":0.0276568383,"z":0.6576132,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1846.42932,"sqrMagnitude":3409301.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1590.69507,"y":57.00032,"z":1421.2417,"normalized":{"x":0.745443642,"y":0.0267119259,"z":0.666033149,"normalized":{"x":0.7454437,"y":0.0267119277,"z":0.6660332,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":2133.89038,"sqrMagnitude":4553488.0},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1493.13965,"y":53.194458,"z":1310.793,"normalized":{"x":0.751235068,"y":0.0267634317,"z":0.659491956,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1987.57983,"sqrMagnitude":3950473.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":4,"strokeIdx":3,"pinPos":{"x":1102.54077,"y":41.683773,"z":914.20105,"normalized":{"x":0.7694668,"y":0.0290912427,"z":0.6380239,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1432.86328,"sqrMagnitude":2053097.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1327.82861,"y":46.2994,"z":1156.988,"normalized":{"x":0.7536828,"y":0.0262797922,"z":0.6567127,"normalized":{"x":0.753682852,"y":0.0262797941,"z":0.6567128,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1761.78711,"sqrMagnitude":3103893.75},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1196.79065,"y":43.2485962,"z":1050.66138,"normalized":{"x":0.751219034,"y":0.02714691,"z":0.65949446,"normalized":{"x":0.7512191,"y":0.0271469112,"z":0.6594945,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1593.13147,"sqrMagnitude":2538067.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":3,"strokeIdx":9,"pinPos":{"x":919.416138,"y":36.92005,"z":880.278442,"normalized":{"x":0.722009659,"y":0.0289930031,"z":0.6912752,"normalized":{"x":0.7220097,"y":0.0289930049,"z":0.691275239,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1273.41248,"sqrMagnitude":1621579.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1006.52417,"y":40.8899536,"z":981.8063,"normalized":{"x":0.715539336,"y":0.0290687215,"z":0.69796735,"normalized":{"x":0.7155394,"y":0.0290687233,"z":0.6979674,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1406.665,"sqrMagnitude":1978706.5},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":4,"strokeIdx":1,"pinPos":{"x":592.2312,"y":27.207695,"z":652.2889,"normalized":{"x":0.671880841,"y":0.03086688,"z":0.740015745,"normalized":{"x":0.6718809,"y":0.0308668818,"z":0.7400158,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":881.4527,"sqrMagnitude":776958.8},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":864.1249,"y":37.49906,"z":890.91394,"normalized":{"x":0.695914745,"y":0.0301995128,"z":0.717489064,"normalized":{"x":0.6959148,"y":0.0301995147,"z":0.7174891,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1241.71082,"sqrMagnitude":1541845.63},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":769.835144,"y":31.5134888,"z":728.6764,"normalized":{"x":0.72593385,"y":0.0297163744,"z":0.6871223,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1060.47559,"sqrMagnitude":1124608.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":3,"strokeIdx":7,"pinPos":{"x":456.3101,"y":20.8129368,"z":567.584534,"normalized":{"x":0.6263151,"y":0.0285671018,"z":0.7790465,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":728.5631,"sqrMagnitude":530804.25},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":579.8759,"y":24.0013065,"z":602.3738,"normalized":{"x":0.6932396,"y":0.0286934786,"z":0.720135748,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":836.472534,"sqrMagnitude":699686.3},"teeIndex":3,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":true,"played":true,"par":5,"strokeIdx":6,"pinPos":{"x":850.3975,"y":39.0940933,"z":965.1135,"normalized":{"x":0.660803556,"y":0.0303781629,"z":0.7499439,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1286.91431,"sqrMagnitude":1656148.38},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":513.847961,"y":24.8497238,"z":648.8379,"normalized":{"x":0.6205604,"y":0.0300103463,"z":0.7835841,"normalized":{"x":0.620560467,"y":0.0300103482,"z":0.7835842,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":828.0386,"sqrMagnitude":685647.9},"teeIndex":3,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":643.8212,"y":31.6985474,"z":766.87915,"normalized":{"x":0.6426609,"y":0.03164142,"z":0.7654971,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1001.80548,"sqrMagnitude":1003614.19},"ShotWPPos1":{"x":767.6659,"y":36.55847,"z":872.282837,"normalized":{"x":0.660328746,"y":0.0314467661,"z":0.7503179,"normalized":{"x":0.6603288,"y":0.03144677,"z":0.750317931,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1162.551,"sqrMagnitude":1351524.75}},{"active":true,"played":true,"par":4,"strokeIdx":2,"pinPos":{"x":1041.06226,"y":62.7601662,"z":1431.37012,"normalized":{"x":0.58782655,"y":0.035436973,"z":0.808210433,"normalized":{"x":0.5878266,"y":0.0354369767,"z":0.8082105,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1771.03638,"sqrMagnitude":3136569.75},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":848.8053,"y":45.3489342,"z":1123.00293,"normalized":{"x":0.6026625,"y":0.0321983173,"z":0.797346354,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1408.42554,"sqrMagnitude":1983662.5},"teeIndex":3,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":928.3314,"y":59.5290527,"z":1309.14966,"normalized":{"x":0.5780418,"y":0.0370668061,"z":0.8151649,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1605.99365,"sqrMagnitude":2579215.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}}]
+Round Is Complete

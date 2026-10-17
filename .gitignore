@@ -1,0 +1,64 @@
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# --- Editors / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Secrets and local config ---
+.env
+.env.*
+!.env.example
+config.yaml
+
+# --- Runtime artifacts ---
+/logs/
+# The season database (real players' shots and scores), wherever a copy lands.
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+models/
+*.wav
+*.mp3
+
+# --- Private league data (real names, handicaps, Squabbit IDs) ---
+# Track the *.example.* files instead.
+data/league.json
+data/league.local.json
+data/history.json
+
+# --- Third-party captures (not ours to redistribute) ---
+# GSPro frames extracted from YouTube rounds and the official KB.
+# See data/screens/SOURCES.md for provenance; tests skip when absent.
+data/screens/video/
+data/screens/*.png
+data/screens/*.jpg
+tools/sim_frame.jpg
+
+# --- Personal deploy notes (host, user, paths) ---
+DEPLOY.local.md
+
+# --- Local leftovers (config backups, ad-hoc round dumps) ---
+*.bak
+*.testbak
+round_*.jsonl
+
+# Squabbit course cards per league week (fetched with `squabbit --cards`)
+data/squabbit_cards.json

@@ -1,0 +1,133 @@
+import json
+import sqlite3
+import threading
+import urllib.request
+
+import pytest
+
+from commentator import stats_web
+from commentator.store import Store
+
+PARS = {str(h): p for h, p in zip(range(1, 10), [4, 4, 3, 5, 4, 3, 4, 5, 4])}   # par 36
+
+
+def _db(tmp_path):
+    path = tmp_path / "season.db"
+    Store(str(path)).close()   # the booth's schema (and one session row)
+    db = sqlite3.connect(path)
+    return path, db
+
+
+def _player_round(db, player, scores, fmt=None, complete=1, played=None, league=0, **counts):
+    cols = {"fir_hit": 0, "fir_tries": 0, "gir_hit": 0, "gir_tries": 0, "scramble_hit": 0, "scramble_tries": 0,
+            "sand_hit": 0, "sand_tries": 0, "putts": 0, "putt_holes": 0, **counts}
+    db.execute(
+        f"INSERT INTO player_rounds (session_id, ended_at, player, course, fmt, {', '.join(cols)}, scores, hole_pars,"
+        f" is_league, complete, holes_played) VALUES (1, 0, ?, 'Pebble', ?, {', '.join('?' * len(cols))}, ?, ?, ?, ?, ?)",
+        (player, fmt, *cols.values(), json.dumps({str(h): s for h, s in scores.items()}), json.dumps(PARS),
+         league, complete, played if played is not None else len(scores)))
+
+
+def _shot(db, player, **kw):
+    row = {"session_id": 1, "ts": 0, "player": player, "is_putt": 0, "attributed": 1, "mulligan": 0, "is_league": 0, **kw}
+    db.execute(f"INSERT INTO shots ({', '.join(row)}) VALUES ({', '.join('?' * len(row))})", tuple(row.values()))
+
+
+def test_player_scoring_leaves_out_shared_ball_rounds_and_short_quits(tmp_path):
+    path, db = _db(tmp_path)
+    nine = {h: PARS[str(h)] for h in range(1, 10)}
+    _player_round(db, "Ann", {**nine, 1: 3, 2: 6}, gir_hit=5, gir_tries=9, putts=15, putt_holes=9, fir_hit=4, fir_tries=7)
+    _player_round(db, "Ann", {h: 2 for h in range(1, 10)}, fmt="scramble", gir_hit=9, gir_tries=9, fir_hit=3, fir_tries=7)
+    _player_round(db, "Ann", {1: 9}, complete=0, played=1, gir_hit=0, gir_tries=1)
+    db.commit()
+    with stats_web.connect(path) as ro:
+        p = stats_web.player(ro, "Ann")
+    assert p["rounds"] == 1 and p["avg_to_par_9"] == 1.0      # birdie + double; the quit isn't a round
+    assert p["gir"] == [5, 10]                                  # the quit's hole counts, the scramble doesn't
+    assert p["fir"] == [7, 14]                                  # own tee shots count in a scramble too
+    assert p["putts_per_hole"] == pytest.approx(15 / 9, abs=0.01)
+    assert p["holes"] == 10 and p["birdie_pct"] == 10.0
+
+
+def test_shot_stats_skip_mulligans_and_long_tee_shots_aren_t_approaches(tmp_path):
+    path, db = _db(tmp_path)
+    _shot(db, "Ann", club="DR", shot_number=1, lie_before="tee", total_yards=250)
+    _shot(db, "Ann", club="DR", shot_number=1, lie_before="tee", total_yards=330, mulligan=1)
+    _shot(db, "Ann", club="3W", shot_number=1, lie_before="tee", to_pin_yards=480, finish_yards=240)
+    _shot(db, "Ann", club="3W", shot_number=2, lie_before="fairway", to_pin_yards=230, finish_yards=20)
+    _shot(db, "Ann", club="PT", is_putt=1, to_pin_yards=2.5, outcome="holed")    # 7.5 ft
+    _shot(db, "Ann", club="PT", is_putt=1, to_pin_yards=2.0, outcome="missed")   # 6 ft
+    _shot(db, "Ann", club="PT", is_putt=1, to_pin_yards=0.5, outcome="gimme")
+    db.commit()
+    with stats_web.connect(path) as ro:
+        p = stats_web.player(ro, "Ann")
+        rec = stats_web.records(ro)
+    assert (p["avg_drive"], p["longest_drive"]) == (250, 250)
+    assert p["clubs"] == [{"club": "3W", "n": 1, "avg_finish": 20.0, "best_finish": 20.0, "avg_from": 230.0}]
+    six_ten = next(b for b in p["putting"] if b["range"] == "6-10 ft")
+    assert (six_ten["made"], six_ten["attempts"]) == (1, 2)
+    assert next(b for b in p["putting"] if b["range"] == "0-3 ft")["attempts"] == 0
+    assert rec["longest_drive"]["v"] == 250 and rec["longest_putt"]["v"] == 2.5
+
+
+def test_context_filter_splits_league_and_practice(tmp_path):
+    path, db = _db(tmp_path)
+    nine = {h: PARS[str(h)] for h in range(1, 10)}
+    _player_round(db, "Ann", nine, league=1)
+    _player_round(db, "Bob", nine, league=0)
+    db.commit()
+    with stats_web.connect(path) as ro:
+        assert [p["name"] for p in stats_web.players(ro, "league")] == ["Ann"]
+        assert [p["name"] for p in stats_web.players(ro, "practice")] == ["Bob"]
+        assert [p["name"] for p in stats_web.players(ro)] == ["Ann", "Bob"]
+
+
+def test_viewer_opens_the_database_read_only(tmp_path):
+    path, _ = _db(tmp_path)
+    with stats_web.connect(path) as ro, pytest.raises(sqlite3.OperationalError):
+        ro.execute("INSERT INTO sessions (started_at, date) VALUES (0, 'x')")
+
+
+def test_server_serves_the_page_and_summary(tmp_path):
+    path, db = _db(tmp_path)
+    db.execute("INSERT INTO rounds (session_id, ended_at, date, course, side, holes, gross, scores, hole_pars, is_league)"
+               " VALUES (1, 0, '2026-10-16', 'Pebble', 'Ann', 9, 37, ?, ?, 0)",
+               (json.dumps({"1": 5, "2": 4}), json.dumps(PARS)))
+    db.commit()
+    server = stats_web.make_server(path, port=0)
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    base = f"http://127.0.0.1:{server.server_address[1]}"
+    try:
+        assert b"Season stats" in urllib.request.urlopen(base + "/").read()
+        body = json.loads(urllib.request.urlopen(base + "/api/summary?context=practice").read())
+        assert body["context"] == "practice"
+        r = body["rounds"][0]
+        assert (r["gross"], r["to_par"], r["played"]) == (9, 1, 9)
+        assert [h["hole"] for h in r["card"]] == [1, 2]
+    finally:
+        server.shutdown()
+        server.server_close()
+
+
+def test_predictions_show_the_commentators_on_air_names(tmp_path):
+    path, db = _db(tmp_path)
+    for who, ok in (("pbp", 1), ("pbp", 0), ("color", 1)):
+        db.execute("INSERT INTO predictions (session_id, ts, commentator, kind, predicted, actual, correct)"
+                   " VALUES (1, 0, ?, 'putt', 'make', 'made', ?)", (who, ok))
+    db.commit()
+    with stats_web.connect(path) as ro:
+        rows = stats_web.predictions(ro, {"pbp": "Nigel", "color": "Duke"})
+    assert [(r["commentator"], r["role"], r["calls"], r["right"]) for r in rows] == [
+        ("Duke", "color analyst", 1, 1), ("Nigel", "play-by-play", 2, 1)]
+
+
+def test_summary_says_whether_there_are_league_rounds(tmp_path):
+    path, db = _db(tmp_path)
+    _shot(db, "Ann")
+    db.commit()
+    with stats_web.connect(path) as ro:
+        assert stats_web.summary(ro)["has_league"] is False   # practice only: the page hides the filter
+    _shot(db, "Ann", is_league=1)
+    db.commit()
+    with stats_web.connect(path) as ro:
+        assert stats_web.summary(ro)["has_league"] is True

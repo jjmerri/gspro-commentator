@@ -1,0 +1,405 @@
+GSPro Version: 3.1.6.20
+Selected Course: cabotcliffs_gsp
+Loading course Cabot Cliffs
+Skipping hole 1
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 0
+ActivePlayer: 0  currentHole: 9  strokes: -1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 465.5882 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 0
+ActivePlayer: 0  currentHole: 9  strokes: -1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 465.5882 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 270.8316 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 0
+ActivePlayer: 1  currentHole: 9  strokes: -1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 465.5882 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 0
+ActivePlayer: 1  currentHole: 9  strokes: -1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 465.5882 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 280.2469 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 122.5112 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 98.37292 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 2
+Selecting shot for player: 1
+Logging tdist: 5.449005 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 4.637477 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 3
+Selecting shot for player: 1
+Logging tdist: 0.7423311 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 9  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 0.9280975 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 9  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 124.138 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 132.5567 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin77%, Speed 92%, VLA 100%
+Using Material TVGnone
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 133.1927 and ActiveGameGimmieDistance: 1.22
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 3
+Selecting shot for player: 1
+Logging tdist: 18.909 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 17.59664 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 4
+Selecting shot for player: 1
+Logging tdist: 1.381628 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 5
+Selecting shot for player: 1
+Logging tdist: 1.087164 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 10  strokes: 1  Previous Score: 6
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGsand, Spin67%, Speed 77%, VLA 100%
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 8.544947 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 1.394369 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 10  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 15.87332 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 11  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 51.18425 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 11  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 6.01259 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 0.2948081 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 11  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 11  strokes: 1  Previous Score: 2
+Selecting shot for player: 1
+Logging tdist: 0.8537848 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 11  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGrough
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 110.0218 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 12  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 71.47567 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin77%, Speed 92%, VLA 100%
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 3.164591 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 12  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 6.228643 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 12  strokes: 1  Previous Score: 2
+Selecting shot for player: 1
+Logging tdist: 0.2526673 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 12  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 12  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 13  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 7.712376 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 13  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 3.046667 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 13  strokes: 1  Previous Score: 1
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 13  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 0.6802581 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 13  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 312.7054 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 14  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 222.5355 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGrough, Spin81%, Speed 93%, VLA 100%
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 94.48718 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 14  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 10.81002 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 14.14503 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 1.494256 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+Hole out !!! 
+ActivePlayer: 0  currentHole: 14  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 14  strokes: 1  Previous Score: 2
+Selecting shot for player: 1
+Logging tdist: 0.18421 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 14  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 15  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 7.549782 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGdeeprough
+ActivePlayer: 0  currentHole: 15  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 9.83266 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 15  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 0.6247637 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 15  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Penalty Surface TVGdeeprough, Spin45%, Speed 85%, VLA 98%
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 15  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 0.4971685 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 15  strokes: 1  Previous Score: 2
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 16  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 79.19742 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 39.12312 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 1  currentHole: 16  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 6.625766 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 6.151776 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 16  strokes: 1  Previous Score: 2
+Selecting shot for player: 1
+Logging tdist: 1.165579 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 16  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 1.042307 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 16  strokes: 1  Previous Score: 3
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+magnitude: 4.952585 | yForce 2.904857 | material water | SoundMultiplier 0.1109934 | SoundForceScale 0.369978 | elevation 50
+Hit_water
+ActivePlayer: 1  currentHole: 17  strokes: 1  Previous Score: 0
+ActivePlayer: 1  currentHole: 17  strokes: -1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 415.1978 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 17  strokes: 1  Previous Score: 0
+Selecting shot for player: 1
+Logging tdist: 171.3092 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 0
+Selecting shot for player: 0
+Logging tdist: 233.6695 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 1
+Selecting shot for player: 0
+Logging tdist: 45.97562 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGfairway
+ActivePlayer: 1  currentHole: 17  strokes: 1  Previous Score: 1
+Selecting shot for player: 1
+Logging tdist: 18.50897 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Regular Mode
+Using Material TVGgreen
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 2
+Selecting shot for player: 0
+Logging tdist: 11.00929 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 17  strokes: 1  Previous Score: 2
+Selecting shot for player: 1
+Logging tdist: 3.48742 and ActiveGameGimmieDistance: 1.22
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 1  currentHole: 17  strokes: 1  Previous Score: 3
+Selecting shot for player: 1
+Logging tdist: 0.1822767 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 1  currentHole: 17  strokes: 1  Previous Score: 4
+ * ------- Shot Fired! ------- *
+LaunchExt - Putting Mode
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 3
+Selecting shot for player: 0
+Logging tdist: 0.6145781 and ActiveGameGimmieDistance: 1.22
+Select Shot - active user ball is within Gimmie distance
+ActivePlayer: 0  currentHole: 17  strokes: 1  Previous Score: 4
+Round Is Complete

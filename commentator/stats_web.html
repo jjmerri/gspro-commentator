@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Season stats</title>
+<style>
+  :root { --bg:#0f1715; --panel:#16211e; --line:#24332f; --text:#e6efe9; --dim:#8fa59b; --accent:#5fc58a;
+          --bad:#e07a6b; --birdie:#d9534f; --eagle:#f0ad4e; --bogey:#3a7bd5; --double:#24539c; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background:var(--bg); color:var(--text); }
+  header { display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; padding:12px 22px;
+           border-bottom:1px solid var(--line); background:var(--panel); position:sticky; top:0; z-index:2; }
+  header h1 { font-size:18px; margin:0; letter-spacing:.3px; }
+  header .meta { color:var(--dim); font-size:12px; margin-left:auto; }
+  nav button, .seg button { background:none; border:1px solid var(--line); color:var(--dim); padding:6px 11px;
+           border-radius:6px; cursor:pointer; font:inherit; }
+  nav button.on, .seg button.on { color:var(--text); border-color:var(--accent); background:#1d2c27; }
+  nav, .seg { display:flex; flex-wrap:wrap; gap:6px; }
+  main { padding:16px 22px 60px; max-width:1300px; margin:0 auto; }
+  h2 { font-size:15px; margin:26px 0 10px; color:var(--dim); text-transform:uppercase; letter-spacing:.6px; }
+  h3 { font-size:14px; margin:18px 0 8px; }
+  table { border-collapse:collapse; width:100%; background:var(--panel); border-radius:8px; overflow:hidden; }
+  th, td { padding:7px 10px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
+  th { color:var(--dim); font-weight:600; font-size:12px; user-select:none; }
+  th[data-sort] { cursor:pointer; }
+  th[data-sort]:hover { color:var(--text); }
+  th:first-child, td:first-child { text-align:left; }
+  td.l, th.l { text-align:left; }
+  td.wrap { white-space:normal; }
+  tr.click { cursor:pointer; }
+  tr.click:hover td, tr.sel td { background:#1c2a26; }
+  tr.sel td:first-child { box-shadow:inset 3px 0 var(--accent); }
+  .sub { color:var(--dim); font-size:12px; }
+  .good { color:var(--accent); } .bad { color:var(--bad); }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+  .card .k { color:var(--dim); font-size:12px; text-transform:uppercase; letter-spacing:.5px; }
+  .card .v { font-size:22px; font-weight:600; margin-top:2px; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(380px, 1fr)); gap:18px; }
+  .scorecard td, .scorecard th { text-align:center; padding:5px 6px; min-width:30px; }
+  .scorecard td:first-child, .scorecard th:first-child { text-align:left; }
+  .s { display:inline-block; min-width:24px; padding:1px 4px; border-radius:4px; }
+  .s.eagle { background:var(--eagle); color:#111; border-radius:50%; }
+  .s.birdie { border:2px solid var(--birdie); border-radius:50%; }
+  .s.bogey { border:2px solid var(--bogey); }
+  .s.double { background:var(--double); }
+  .tag { font-size:11px; padding:1px 6px; border-radius:10px; border:1px solid var(--line); color:var(--dim); margin-left:6px; }
+  .detail td { background:#121b19; padding:12px 14px; text-align:left; white-space:normal; }
+  .bar { height:8px; background:var(--line); border-radius:4px; overflow:hidden; min-width:80px; }
+  .bar i { display:block; height:100%; background:var(--accent); }
+  .err { color:#ff8a80; padding:20px; }
+  .empty { color:var(--dim); padding:10px 0; }
+  .controls { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 14px; }
+  select { background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:6px 8px; font:inherit; }
+  .charts { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; }
+  .chart { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  .chart svg { width:100%; height:auto; max-height:170px; display:block; }
+  .sg { display:grid; grid-template-columns:120px 1fr 60px; gap:6px 10px; align-items:center; }
+  .sgbar { position:relative; height:12px; background:var(--line); border-radius:3px; }
+  .sgbar i { position:absolute; top:0; bottom:0; border-radius:3px; }
+  .sgbar .mid { position:absolute; left:50%; top:-3px; bottom:-3px; width:1px; background:var(--dim); }
+  .line { padding:6px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:110px 1fr; gap:10px; }
+  .line .who { color:var(--accent); font-weight:600; }
+  .line .who.color { color:var(--eagle); }
+  .shotctx { margin:14px 0 4px; color:var(--dim); font-size:12px; text-transform:uppercase; letter-spacing:.4px; }
+  .gap { display:grid; grid-template-columns:44px 1fr; gap:4px 10px; align-items:center; }
+  .gaptrack { position:relative; height:16px; }
+  .gaptrack .rng { position:absolute; top:4px; height:8px; background:#2c4a3f; border-radius:4px; }
+  .gaptrack .med { position:absolute; top:0; width:3px; height:16px; background:var(--accent); border-radius:2px; }
+  .gaptrack .lbl { position:absolute; top:-1px; font-size:11px; color:var(--dim); }
+  .moment { display:flex; gap:12px; padding:8px 0; border-bottom:1px solid var(--line); }
+  .moment .kind { min-width:90px; color:var(--eagle); font-weight:600; text-transform:capitalize; }
+  .versus td.win { color:var(--accent); font-weight:600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>⛳ Season stats</h1>
+  <nav id="tabs"></nav>
+  <div class="seg" id="ctx">
+    <button data-ctx="" class="on">All</button>
+    <button data-ctx="league">League</button>
+    <button data-ctx="practice">Practice</button>
+  </div>
+  <div class="meta" id="meta"></div>
+</header>
+<main id="main"></main>
+<script>
+const TABS = [["players", "Players"], ["versus", "Head-to-head"], ["rounds", "Rounds"], ["courses", "Courses"],
+              ["shots", "Shots"], ["broadcasts", "Broadcasts"], ["highlights", "Highlights"], ["booth", "Booth"]];
+const hashTab = location.hash.slice(1);
+const state = { tab: TABS.some(t => t[0] === hashTab) ? hashTab : "players", ctx: "", data: null, player: null,
+                round: null, sort: {}, course: null, versus: [null, null], shotFilter: {}, shots: null, shotOpen: null,
+                session: null, transcript: null };
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dash = (v, suffix = "") => v === null || v === undefined ? "–" : v + suffix;
+const toPar = (v) => v === null || v === undefined ? "–" : v === 0 ? "E" : (v > 0 ? "+" : "") + (Math.round(v * 10) / 10);
+const signed = (v, d = 2) => v === null || v === undefined ? "–" : (v > 0 ? "+" : "") + v.toFixed(d);
+const frac = (pair) => pair && pair[1] ? `${pair[0]}/${pair[1]}` : "–";
+const ordinal = (n) => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] || ["th", "st", "nd", "rd"][n % 100] || "th");
+const holeName = (label) => label ? label.replace(/, \d+ yards$/, "") : "";
+const COLOR_KEYS = new Set(["color"]);
+const KIND_LABEL = { banter: "News banter", closer: "Sign-off", flight: "Ball in flight", opener: "Opening", preshot: "Pre-shot",
+                     reaction: "Reaction", segment: "Between shots", shot: "Shot call" };
+
+async function getJSON(url) {
+  const r = await fetch(url);
+  const body = await r.json();
+  if (body && body.error) throw new Error(body.error);
+  return body;
+}
+
+async function load() {
+  $("#main").innerHTML = '<p class="sub">Loading…</p>';
+  try {
+    const body = await getJSON("/api/summary?context=" + state.ctx);
+    state.data = body;
+    state.shots = null;
+    $("#ctx").style.display = body.has_league ? "" : "none";
+    const mod = new Date(body.db.modified * 1000).toLocaleString();
+    $("#meta").textContent = `${body.db.path} · copied ${mod} · last session ${body.last_session || "–"}`;
+    render();
+  } catch (e) {
+    $("#main").innerHTML = `<div class="err">Couldn't read the database: ${esc(e.message)}</div>`;
+  }
+}
+
+const shownSort = {};   // each table's sort as drawn, defaults included, so a header click flips it
+function sortable(id, rows, cols, rowHtml, opts = {}) {
+  const s = state.sort[id] || { key: opts.key, dir: opts.dir || 1 };
+  shownSort[id] = s;
+  const sorted = [...rows];
+  if (s.key) {
+    const col = cols.find(c => c.key === s.key) || {};
+    const val = col.val || (r => r[s.key]);
+    sorted.sort((a, b) => {
+      const x = val(a), y = val(b);
+      if (x === y) return 0;
+      if (x === null || x === undefined) return 1;
+      if (y === null || y === undefined) return -1;
+      return (x < y ? -1 : 1) * s.dir;
+    });
+  }
+  const head = cols.map(c => `<th class="${c.cls || ""}" data-sort="${id}:${c.key}" title="${esc(c.title || "")}">${c.label}${s.key === c.key ? (s.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("");
+  return `<table><thead><tr>${head}</tr></thead><tbody>${sorted.map(rowHtml).join("") || `<tr><td colspan="${cols.length}" class="empty">${opts.empty || "Nothing here yet."}</td></tr>`}</tbody></table>`;
+}
+
+function scoreCell(score, par) {
+  const d = score - par;
+  const cls = d <= -2 ? "eagle" : d === -1 ? "birdie" : d === 1 ? "bogey" : d >= 2 ? "double" : "";
+  return `<span class="s ${cls}">${score}</span>`;
+}
+
+function scorecard(holes) {
+  if (!holes || !holes.length) return '<p class="empty">No hole-by-hole card recorded.</p>';
+  const par = holes.reduce((a, h) => a + h.par, 0), gross = holes.reduce((a, h) => a + h.score, 0);
+  return `<table class="scorecard"><tr><th>Hole</th>${holes.map(h => `<th>${h.hole}</th>`).join("")}<th>Tot</th></tr>
+    <tr><td class="sub">Par</td>${holes.map(h => `<td class="sub">${h.par}</td>`).join("")}<td class="sub">${par}</td></tr>
+    <tr><td>Score</td>${holes.map(h => `<td>${scoreCell(h.score, h.par)}</td>`).join("")}<td><b>${gross}</b> <span class="sub">${toPar(gross - par)}</span></td></tr></table>`;
+}
+
+// A small line chart: one point per night.
+function lineChart(points, key, title, fmt = v => v, lowerIsBetter = false) {
+  const pts = points.filter(p => p[key] !== null && p[key] !== undefined);
+  if (!pts.length) return `<div class="chart"><div class="sub">${title}</div><p class="empty">No data yet.</p></div>`;
+  const W = 300, H = 120, pad = { l: 36, r: 22, t: 12, b: 22 };
+  const vals = pts.map(p => p[key]);
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  if (lo === hi) { lo -= 1; hi += 1; }
+  const span = hi - lo; lo -= span * 0.15; hi += span * 0.15;
+  const x = i => pad.l + (pts.length === 1 ? (W - pad.l - pad.r) / 2 : i * (W - pad.l - pad.r) / (pts.length - 1));
+  const y = v => pad.t + (hi - v) * (H - pad.t - pad.b) / (hi - lo);
+  const path = pts.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p[key]).toFixed(1)}`).join("");
+  const first = vals[0], last = vals[vals.length - 1];
+  const better = pts.length > 1 && (lowerIsBetter ? last < first : last > first);
+  const worse = pts.length > 1 && (lowerIsBetter ? last > first : last < first);
+  return `<div class="chart"><div class="sub">${title} <span class="${better ? "good" : worse ? "bad" : ""}">${fmt(last)}</span></div>
+    <svg viewBox="0 0 ${W} ${H}">
+      <text x="2" y="${y(Math.max(...vals)) + 4}" fill="#8fa59b" font-size="10">${fmt(Math.max(...vals))}</text>
+      <text x="2" y="${y(Math.min(...vals)) + 4}" fill="#8fa59b" font-size="10">${fmt(Math.min(...vals))}</text>
+      <path d="${path}" fill="none" stroke="#5fc58a" stroke-width="2"/>
+      ${pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p[key])}" r="3" fill="#5fc58a"><title>${p.date}: ${fmt(p[key])}</title></circle>`).join("")}
+      ${pts.map((p, i) => (pts.length <= 6 || i === 0 || i === pts.length - 1) ? `<text x="${x(i)}" y="${H - 6}" fill="#8fa59b" font-size="10" text-anchor="${i === pts.length - 1 && pts.length > 1 ? "end" : i === 0 && pts.length > 1 ? "start" : "middle"}">${p.date.slice(5)}</text>` : "").join("")}
+    </svg></div>`;
+}
+
+const SG_LABELS = { off_tee: "Off the tee", approach: "Approach", around_green: "Around the green", putting: "Putting", total: "Total" };
+function sgBars(sg) {
+  if (!sg) return '<p class="empty">Not enough finished holes yet.</p>';
+  const max = Math.max(1, ...Object.values(sg.per_nine).map(Math.abs));
+  return `<div class="sg">${Object.entries(SG_LABELS).map(([k, label]) => {
+    const v = sg.per_nine[k], w = Math.abs(v) / max * 50;
+    const style = v >= 0 ? `left:50%;width:${w}%;background:var(--accent)` : `left:${50 - w}%;width:${w}%;background:var(--bad)`;
+    return `<div${k === "total" ? ' style="font-weight:600"' : ""}>${label}</div><div class="sgbar"><span class="mid"></span><i style="${style}"></i></div>
+      <div class="${v >= 0 ? "good" : "bad"}" style="text-align:right">${signed(v)}</div>`;
+  }).join("")}</div>
+  <p class="sub">Strokes gained per nine holes against an approximate PGA Tour baseline (Broadie): negative is shots lost to a tour pro.
+  ${sg.holes} finished holes. GSPro's gimmes make putting look a little better than real life.</p>`;
+}
+
+function gapChart(clubs) {
+  const cs = clubs.filter(c => c.carry);
+  if (!cs.length) return '<p class="empty">No launch-monitor carries yet.</p>';
+  const max = Math.max(...cs.map(c => c.carry_max || c.carry)) * 1.05;
+  const pct = v => (100 * v / max).toFixed(1) + "%";
+  return `<div class="gap">${cs.map(c => `<div>${esc(c.club)}</div><div class="gaptrack" title="${c.n} swings; middle half ${c.carry_lo}–${c.carry_hi} yd">
+      <span class="rng" style="left:${pct(c.carry_lo)};width:${pct(Math.max(1, c.carry_hi - c.carry_lo))}"></span>
+      <span class="med" style="left:${pct(c.carry)}"></span>
+      <span class="lbl" style="left:calc(${pct(c.carry)} + 8px)">${Math.round(c.carry)} yd</span></div>`).join("")}</div>`;
+}
+
+// ---- tabs -------------------------------------------------------------------------------------
+
+function renderPlayers() {
+  const d = state.data;
+  const cols = [
+    { key: "name", label: "Player" },
+    { key: "rounds", label: "Rounds", title: "Finished rounds, or a full nine from one quit early" },
+    { key: "avg_to_par_9", label: "Avg / 9", title: "Average score to par per nine holes (individual-ball rounds)" },
+    { key: "best_to_par_9", label: "Best / 9" },
+    { key: "sg_total", label: "SG / 9", title: "Strokes gained per nine vs. the PGA Tour baseline", val: p => p.sg ? p.sg.per_nine.total : null },
+    { key: "fir_pct", label: "Fairways", title: "Fairways hit off the tee (par 4s and 5s)" },
+    { key: "gir_pct", label: "GIR", title: "Greens in regulation" },
+    { key: "scramble_pct", label: "Scrambling", title: "Par or better after missing the green" },
+    { key: "sand_pct", label: "Sand saves", title: "Up and down from a greenside bunker (PGA Tour definition)" },
+    { key: "putts_per_hole", label: "Putts / hole" },
+    { key: "birdie_pct", label: "Birdie %", title: "Holes made in birdie or better" },
+    { key: "avg_drive", label: "Avg drive" },
+    { key: "longest_drive", label: "Longest" },
+  ];
+  const row = p => `<tr class="click${p.name === state.player ? " sel" : ""}" data-player="${esc(p.name)}"><td><b>${esc(p.name)}</b></td><td>${p.rounds}</td>
+    <td>${toPar(p.avg_to_par_9)}</td><td>${toPar(p.best_to_par_9)}</td>
+    <td class="${p.sg && p.sg.per_nine.total >= 0 ? "good" : ""}">${p.sg ? signed(p.sg.per_nine.total, 1) : "–"}</td>
+    <td>${dash(p.fir_pct, "%")} <span class="sub">${frac(p.fir)}</span></td>
+    <td>${dash(p.gir_pct, "%")} <span class="sub">${frac(p.gir)}</span></td>
+    <td>${dash(p.scramble_pct, "%")} <span class="sub">${frac(p.scramble)}</span></td>
+    <td>${dash(p.sand_pct, "%")} <span class="sub">${frac(p.sand)}</span></td>
+    <td>${dash(p.putts_per_hole)}</td><td>${dash(p.birdie_pct, "%")}</td>
+    <td>${dash(p.avg_drive, " yd")}</td><td>${dash(p.longest_drive, " yd")}</td></tr>`;
+  let html = `<h2>Players</h2>` + sortable("players", d.players, cols, row, { key: "avg_to_par_9" });
+  const p = d.players.find(p => p.name === state.player)
+    || [...d.players].sort((a, b) => b.rounds - a.rounds || b.holes - a.holes)[0];
+  if (p) { state.player = p.name; html += renderPlayer(p); }
+  return html;
+}
+
+function renderPlayer(p) {
+  const pa = p.par_avg;
+  return `<h2>${esc(p.name)}</h2>
+  <div class="cards">
+    <div class="card"><div class="k">Scoring / 9</div><div class="v">${toPar(p.avg_to_par_9)}</div><div class="sub">best ${toPar(p.best_to_par_9)} · ${p.rounds} round${p.rounds === 1 ? "" : "s"} · ${p.holes} holes</div></div>
+    <div class="card"><div class="k">By par</div><div class="v" style="font-size:16px">P3 ${toPar(pa["3"])} · P4 ${toPar(pa["4"])} · P5 ${toPar(pa["5"])}</div><div class="sub">average to par per hole</div></div>
+    <div class="card"><div class="k">Hole outcomes</div><div class="v" style="font-size:16px">${dash(p.birdie_pct, "%")} / ${dash(p.par_pct, "%")} / ${dash(p.bogey_pct, "%")} / ${dash(p.double_pct, "%")}</div><div class="sub">birdie+ / par / bogey / double+</div></div>
+    <div class="card"><div class="k">Driving</div><div class="v">${dash(p.avg_drive, " yd")}</div><div class="sub">longest ${dash(p.longest_drive, " yd")} · ${p.drives} drives · ${dash(p.fir_pct, "%")} fairways</div></div>
+  </div>
+  <div class="grid2">
+    <div><h2>Strokes gained</h2>${sgBars(p.sg)}</div>
+    <div><h2>Night by night</h2><div class="charts" style="grid-template-columns:1fr 1fr">
+      ${lineChart(p.trend, "to_par_9", "Score to par / 9", toPar, true)}
+      ${lineChart(p.trend, "sg_9", "Strokes gained / 9", v => signed(v, 1))}
+      ${lineChart(p.trend, "putts_per_hole", "Putts / hole", v => v.toFixed(2), true)}
+      ${lineChart(p.trend, "gir_pct", "Greens in regulation", v => v + "%")}
+    </div></div>
+  </div>
+  <h2>Gapping and typical miss</h2>
+  <div class="grid2">
+    <div>${gapChart(p.gapping)}<p class="sub">Launch-monitor carry: the bar is the middle half of swings, the mark the median.</p></div>
+    <div>${sortable("gap", p.gapping, [
+      { key: "club", label: "Club" }, { key: "n", label: "Swings", title: "Full swings used (of all swings with the club)" }, { key: "carry", label: "Carry" },
+      { key: "gap_to_next", label: "Gap", title: "Median carry gap to the next club down" },
+      { key: "smash", label: "Smash", title: "Ball speed / club speed" }, { key: "launch", label: "Launch" },
+      { key: "spin", label: "Spin" }, { key: "miss", label: "Typical flight", cls: "l" }],
+      c => `<tr><td>${esc(c.club)}</td><td>${c.n}${c.swings > c.n ? ` <span class="sub">/ ${c.swings}</span>` : ""}</td><td>${dash(c.carry === null ? null : Math.round(c.carry), " yd")}</td>
+        <td>${dash(c.gap_to_next, " yd")}</td><td>${dash(c.smash)}</td><td>${dash(c.launch, "°")}</td>
+        <td>${dash(c.spin === null ? null : Math.round(c.spin))}</td><td class="l">${esc(c.miss || "–")}</td></tr>`,
+      { key: "carry", dir: -1 })}
+      <p class="sub">Medians over full swings (ball speed within 80% of the club's best, so chips and knock-downs are left out; a mulligan's swing counts). Flight is for a right-hander: start line and curve from the spin axis.</p></div>
+  </div>
+  <div class="grid2">
+    <div><h2>Approach by club</h2>
+      ${sortable("clubs", p.clubs, [
+        { key: "club", label: "Club" }, { key: "n", label: "Shots" }, { key: "avg_from", label: "Avg from" },
+        { key: "avg_finish", label: "Avg left", title: "Average distance from the pin after the shot" },
+        { key: "best_finish", label: "Closest" }],
+        c => `<tr><td>${esc(c.club)}</td><td>${c.n}</td><td>${dash(c.avg_from, " yd")}</td><td>${dash(c.avg_finish, " yd")}</td><td>${dash(c.best_finish, " yd")}</td></tr>`)}
+      <p class="sub">Full shots from 250 yd or closer with a recorded finish (driver and putter left out).</p></div>
+    <div><h2>Putting</h2>
+      ${sortable("putts", p.putting.map((b, i) => ({ ...b, order: i })), [
+        { key: "order", label: "Length" }, { key: "attempts", label: "Made", val: b => b.attempts || null },
+        { key: "pct", label: "%" }, { key: "bar", label: "", cls: "l", val: b => b.pct }],
+        b => `<tr><td>${b.range}</td><td>${b.attempts ? `${b.made}/${b.attempts}` : "–"}</td><td>${dash(b.pct, "%")}</td>
+        <td class="l"><div class="bar"><i style="width:${Math.min(100, b.pct || 0)}%"></i></div></td></tr>`, { key: "order" })}
+      <p class="sub">Putts with a known result; conceded gimmes left out.</p></div>
+  </div>
+  <h2>Recovery</h2>
+  ${sortable("rec", p.recovery, [
+    { key: "lie", label: "From", cls: "l" }, { key: "band", label: "Distance", cls: "l" }, { key: "n", label: "Shots" },
+    { key: "avg_from", label: "Avg from" }, { key: "green_pct", label: "Found the green" },
+    { key: "avg_left", label: "Avg left", title: "Where the shot finished, when it was recorded" }],
+    r => `<tr><td class="l">${esc(r.lie)}</td><td class="l">${r.band === "greenside" ? "greenside (≤50 yd)" : "longer"}</td><td>${r.n}</td>
+      <td>${r.avg_from} yd</td><td>${dash(r.green_pct, "%")}${r.holed ? ` <span class="sub">${r.holed} holed</span>` : ""}</td><td>${dash(r.avg_left, " yd")}</td></tr>`)}
+  <h2>Rounds</h2>
+  ${sortable("hist", p.history, [
+    { key: "date", label: "Date" }, { key: "course", label: "Course", cls: "l" }, { key: "played", label: "Holes" },
+    { key: "gross", label: "Gross" }, { key: "to_par", label: "To par" }],
+    h => `<tr><td>${esc(h.date)}</td><td class="l">${esc(h.course)}</td><td>${h.played}</td><td>${h.gross}</td><td>${toPar(h.to_par)}</td></tr>`,
+    { key: "date", dir: -1 })}`;
+}
+
+function renderVersus() {
+  const ps = state.data.players;
+  if (ps.length < 2) return '<p class="empty">Head-to-head needs two players in the database.</p>';
+  let [a, b] = state.versus;
+  const ranked = [...ps].sort((x, y) => y.rounds - x.rounds || y.holes - x.holes);
+  if (!ps.some(p => p.name === a)) a = ranked[0].name;
+  if (!ps.some(p => p.name === b) || b === a) b = ranked.find(p => p.name !== a).name;
+  state.versus = [a, b];
+  const A = ps.find(p => p.name === a), B = ps.find(p => p.name === b);
+  const opt = (sel, which) => `<select data-versus="${which}">${ps.map(p => `<option${p.name === sel ? " selected" : ""}>${esc(p.name)}</option>`).join("")}</select>`;
+  const sg = (p, k) => p.sg ? p.sg.per_nine[k] : null;
+  const rows = [
+    ["Rounds", p => p.rounds, null, v => v],
+    ["Scoring / 9", p => p.avg_to_par_9, -1, toPar],
+    ["Best nine", p => p.best_to_par_9, -1, toPar],
+    ["Strokes gained / 9", p => sg(p, "total"), 1, v => signed(v)],
+    ["  off the tee", p => sg(p, "off_tee"), 1, v => signed(v)],
+    ["  approach", p => sg(p, "approach"), 1, v => signed(v)],
+    ["  around the green", p => sg(p, "around_green"), 1, v => signed(v)],
+    ["  putting", p => sg(p, "putting"), 1, v => signed(v)],
+    ["Fairways", p => p.fir_pct, 1, v => v + "%"],
+    ["Greens in regulation", p => p.gir_pct, 1, v => v + "%"],
+    ["Scrambling", p => p.scramble_pct, 1, v => v + "%"],
+    ["Sand saves", p => p.sand_pct, 1, v => v + "%"],
+    ["Putts / hole", p => p.putts_per_hole, -1, v => v],
+    ["Birdie or better", p => p.birdie_pct, 1, v => v + "%"],
+    ["Double bogey or worse", p => p.double_pct, -1, v => v + "%"],
+    ["Average drive", p => p.avg_drive, 1, v => v + " yd"],
+    ["Longest drive", p => p.longest_drive, 1, v => v + " yd"],
+  ];
+  const cell = (v, other, better, fmt) => {
+    const win = better && v !== null && v !== undefined && other !== null && other !== undefined && (better > 0 ? v > other : v < other);
+    return `<td class="${win ? "win" : ""}">${v === null || v === undefined ? "–" : fmt(v)}</td>`;
+  };
+  const tally = [0, 0];
+  rows.forEach(([, f, better]) => {
+    const x = f(A), y = f(B);
+    if (!better || x === null || y === null || x === undefined || y === undefined || x === y) return;
+    tally[(better > 0 ? x > y : x < y) ? 0 : 1]++;
+  });
+  const courseA = {}, courseB = {};
+  A.history.forEach(h => (courseA[h.course] = courseA[h.course] || []).push(h.to_par * 9 / h.played));
+  B.history.forEach(h => (courseB[h.course] = courseB[h.course] || []).push(h.to_par * 9 / h.played));
+  const avg = xs => xs.reduce((s, x) => s + x, 0) / xs.length;
+  const shared = Object.keys(courseA).filter(c => courseB[c]);
+  return `<h2>Head-to-head</h2><div class="controls">${opt(a, 0)} <span class="sub">vs</span> ${opt(b, 1)}
+      <span class="sub" style="margin-left:12px">Categories won: <b class="good">${tally[0]}</b> – <b class="good">${tally[1]}</b></span></div>
+    <table class="versus"><thead><tr><th>Stat</th><th>${esc(a)}</th><th>${esc(b)}</th></tr></thead><tbody>
+    ${rows.map(([label, f, better, fmt]) => `<tr><td${label.startsWith("  ") ? ' class="sub" style="padding-left:24px"' : ""}>${label.trim()}</td>${cell(f(A), f(B), better, fmt)}${cell(f(B), f(A), better, fmt)}</tr>`).join("")}
+    </tbody></table>
+    <h2>Courses both have played</h2>
+    ${shared.length ? `<table><thead><tr><th>Course</th><th>${esc(a)} / 9</th><th>${esc(b)} / 9</th></tr></thead><tbody>
+      ${shared.map(c => { const x = avg(courseA[c]), y = avg(courseB[c]);
+        return `<tr><td>${esc(c)}</td><td class="${x < y ? "good" : ""}">${toPar(x)} <span class="sub">(${courseA[c].length})</span></td><td class="${y < x ? "good" : ""}">${toPar(y)} <span class="sub">(${courseB[c].length})</span></td></tr>`; }).join("")}
+      </tbody></table>` : '<p class="empty">No course in common yet.</p>'}`;
+}
+
+function renderRounds() {
+  const d = state.data;
+  const cols = [
+    { key: "date", label: "Date" }, { key: "course", label: "Course", cls: "l" }, { key: "side", label: "Player / side", cls: "l" },
+    { key: "format", label: "Format", cls: "l" }, { key: "played", label: "Holes" }, { key: "gross", label: "Gross" },
+    { key: "to_par", label: "To par" }, { key: "fir", label: "Fairways", val: r => r.fir[1] ? r.fir[0] / r.fir[1] : null },
+    { key: "gir", label: "GIR", val: r => r.gir[1] ? r.gir[0] / r.gir[1] : null }, { key: "putts", label: "Putts" },
+  ];
+  const row = r => {
+    const open = state.round === r.id;
+    const tags = (!state.data.has_league ? "" : r.league ? '<span class="tag">league</span>' : '<span class="tag">practice</span>') + (r.complete ? "" : '<span class="tag">quit early</span>');
+    return `<tr class="click" data-round="${r.id}"><td>${esc(r.date)}</td><td class="l">${esc(r.course)}</td>
+      <td class="l">${esc(r.side)}${r.team && r.team !== r.side ? ` <span class="sub">${esc(r.team)}</span>` : ""}</td>
+      <td class="l">${esc(r.format.replace("_", " "))}${tags}</td><td>${r.played}/${r.holes}</td><td>${dash(r.gross)}</td>
+      <td>${toPar(r.to_par)}</td><td>${frac(r.fir)}</td><td>${frac(r.gir)}</td><td>${dash(r.putts)}</td></tr>` +
+      (open ? `<tr class="detail"><td colspan="${cols.length}">${scorecard(r.card)}
+        <p class="sub">Scrambling ${frac(r.scramble)} · Sand saves ${frac(r.sand)} · Penalties ${dash(r.penalties)}${r.longest_drive ? ` · Longest drive ${Math.round(r.longest_drive)} yd` : ""}</p></td></tr>` : "");
+  };
+  return `<h2>Rounds</h2>` + sortable("rounds", d.rounds, cols, row) + `<p class="sub">Click a round for its scorecard.</p>`;
+}
+
+function renderCourses() {
+  const cs = state.data.courses;
+  if (!cs.length) return '<p class="empty">No courses yet.</p>';
+  const c = cs.find(c => c.course === state.course) || cs[0];
+  state.course = c.course;
+  const list = sortable("courses", cs, [
+    { key: "course", label: "Course" }, { key: "rounds", label: "Player rounds" },
+    { key: "players", label: "Players", cls: "l", val: c => c.players.length },
+    { key: "best", label: "Best nine", val: c => c.best ? c.best.to_par_9 : null },
+    { key: "last_played", label: "Last played" }],
+    x => `<tr class="click${x.course === c.course ? " sel" : ""}" data-course="${esc(x.course)}"><td><b>${esc(x.course)}</b></td><td>${x.rounds}</td>
+      <td class="l">${esc(x.players.join(", "))}</td><td>${x.best ? `${toPar(x.best.to_par_9)} <span class="sub">${esc(x.best.player)}</span>` : "–"}</td><td>${esc(x.last_played)}</td></tr>`);
+  const maxAbs = Math.max(0.5, ...c.holes.map(h => Math.abs(h.to_par)));
+  const holes = sortable("courseholes", c.holes, [
+    { key: "hole", label: "Hole" }, { key: "par", label: "Par" }, { key: "n", label: "Played" },
+    { key: "avg", label: "Average" }, { key: "to_par", label: "To par" }, { key: "bar", label: "", val: h => h.to_par },
+    { key: "birdie_pct", label: "Birdie+" }, { key: "bogey_plus_pct", label: "Bogey+" }, { key: "best", label: "Best" }, { key: "worst", label: "Worst" }],
+    h => {
+      const w = Math.abs(h.to_par) / maxAbs * 50;
+      const style = h.to_par >= 0 ? `left:50%;width:${w}%;background:var(--bad)` : `left:${50 - w}%;width:${w}%;background:var(--accent)`;
+      const tag = h.hole === c.hardest ? '<span class="tag">hardest</span>' : h.hole === c.easiest ? '<span class="tag">easiest</span>' : "";
+      return `<tr><td>${h.hole}${tag}</td><td>${h.par}</td><td>${h.n}</td><td>${h.avg.toFixed(2)}</td><td>${signed(h.to_par)}</td>
+        <td style="width:160px"><div class="sgbar"><span class="mid"></span><i style="${style}"></i></div></td>
+        <td>${h.birdie_pct}%</td><td>${h.bogey_plus_pct}%</td><td>${h.best}</td><td>${h.worst}</td></tr>`;
+    }, { key: "hole" });
+  return `<h2>Courses</h2>${list}<h2>${esc(c.course)}: hole by hole</h2>${holes}
+    <p class="sub">Every individual-ball card on this course. ${c.best ? `Best nine: ${esc(c.best.player)}, ${toPar(c.best.to_par)} over ${c.best.holes} holes on ${esc(c.best.date)}.` : ""}</p>`;
+}
+
+async function loadShots() {
+  const f = state.shotFilter, q = new URLSearchParams({ context: state.ctx, ...f });
+  state.shots = "loading";
+  render();
+  try { state.shots = await getJSON("/api/shots?" + q); } catch (e) { state.shots = { error: e.message }; }
+  render();
+}
+
+function renderShots() {
+  const d = state.data, f = state.shotFilter;
+  const sel = (key, label, values) => `<select data-shotf="${key}"><option value="">${label}: all</option>${values.map(v =>
+    `<option${f[key] === v ? " selected" : ""}>${esc(v)}</option>`).join("")}</select>`;
+  const controls = `<div class="controls">${sel("player", "Player", d.players.map(p => p.name))}${sel("date", "Night", d.filters.dates)}
+    ${sel("course", "Course", d.filters.courses)}${sel("club", "Club", d.filters.clubs)}${sel("lie", "Lie", d.filters.lies)}</div>`;
+  if (state.shots === null) { loadShots(); return `<h2>Shots</h2>${controls}<p class="sub">Loading…</p>`; }
+  if (state.shots === "loading") return `<h2>Shots</h2>${controls}<p class="sub">Loading…</p>`;
+  if (state.shots.error) return `<h2>Shots</h2>${controls}<div class="err">${esc(state.shots.error)}</div>`;
+  const yd = v => v === null || v === undefined ? "–" : v + " yd";
+  const ft = v => v === null || v === undefined ? "–" : Math.round(v * 3) + " ft";
+  const row = s => {
+    const putt = s.is_putt, open = state.shotOpen === s.id;
+    const result = s.outcome ? s.outcome : s.lie_after ? `to the ${s.lie_after}` : "";
+    const left = putt ? "" : s.finish !== null ? ` · ${s.lie_after === "green" ? ft(s.finish) : yd(s.finish)} left` : "";
+    const head = `<tr class="click${open ? " sel" : ""}" data-shot="${s.id}"><td>${esc(s.date)}</td><td class="l">${esc(s.player)}</td>
+      <td class="l">${esc(s.course)} <span class="sub">${esc(holeName(s.hole))}</span></td><td>${dash(s.shot_number)}</td><td>${esc(s.club || (s.outcome === "gimme" ? "gimme" : "–"))}</td>
+      <td class="l">${esc(s.lie_before || "–")}</td><td>${putt ? ft(s.to_pin) : yd(s.to_pin)}</td>
+      <td>${putt || !s.carry ? "–" : s.carry + " yd"}</td><td class="l">${esc(result)}${left}${s.mulligan ? '<span class="tag">mulligan</span>' : ""}</td>
+      <td>${s.lines.length ? `💬 ${s.lines.length}` : ""}</td></tr>`;
+    if (!open) return head;
+    const launch = putt ? "" : `<p class="sub">Ball ${dash(s.ball_speed && s.ball_speed.toFixed(1), " mph")} · club ${dash(s.club_speed && s.club_speed.toFixed(1), " mph")} ·
+      launch ${dash(s.launch_angle && s.launch_angle.toFixed(1), "°")} · spin ${dash(s.total_spin && Math.round(s.total_spin), " rpm")} ·
+      axis ${dash(s.spin_axis && s.spin_axis.toFixed(1), "°")} · start ${dash(s.start_direction && s.start_direction.toFixed(1), "°")} · total ${yd(s.total)}</p>`;
+    const said = s.lines.length ? s.lines.map(l => `<div class="line"><div class="who ${COLOR_KEYS.has(l.speaker) ? "color" : ""}">${esc(nameOf(l.speaker))}</div><div>${esc(l.text)} <span class="tag">${esc(l.kind)}</span></div></div>`).join("")
+      : '<p class="empty">The booth said nothing tied to this shot.</p>';
+    return head + `<tr class="detail"><td colspan="10">${launch}${said}</td></tr>`;
+  };
+  const table = sortable("shots", state.shots.map((s, i) => ({ ...s, order: i })), [
+    { key: "order", label: "Night", title: "Newest first" }, { key: "player", label: "Player", cls: "l" },
+    { key: "course", label: "Course / hole", cls: "l", val: s => `${s.course} ${s.hole}` }, { key: "shot_number", label: "#" },
+    { key: "club", label: "Club" }, { key: "lie_before", label: "From", cls: "l" },
+    { key: "to_pin", label: "To pin" },
+    { key: "carry", label: "Carry", val: s => s.is_putt ? null : s.carry }, { key: "result", label: "Result", cls: "l", val: s => s.outcome || s.lie_after },
+    { key: "said", label: "💬", val: s => s.lines.length }],
+    row, { key: "order", empty: "No shots match." });
+  return `<h2>Shots</h2>${controls}${table}
+    <p class="sub">Newest first, up to 500. Click a column to sort; click a shot for its launch numbers and what the booth said.</p>`;
+}
+
+function nameOf(key) {
+  const p = state.data.booth.commentators.find(c => c.key === key);
+  return p ? p.name : key;
+}
+
+async function loadTranscript(id) {
+  state.session = id;
+  state.transcript = "loading";
+  render();
+  try { state.transcript = await getJSON("/api/transcript?session=" + id); } catch (e) { state.transcript = { error: e.message }; }
+  render();
+}
+
+function renderBroadcasts() {
+  const bs = state.data.broadcasts;
+  if (!bs.length) return '<p class="empty">No broadcasts recorded yet.</p>';
+  if (state.session === null) { loadTranscript(bs[0].id); }
+  const label = b => `${b.date} · ${b.courses.join(", ") || "no course"} · ${b.players.join(", ")} (${b.lines} lines)`;
+  const pick = `<div class="controls"><select data-session>${bs.map(b => `<option value="${b.id}"${b.id === state.session ? " selected" : ""}>${esc(label(b))}</option>`).join("")}</select></div>`;
+  const t = state.transcript;
+  if (!t || t === "loading") return `<h2>Broadcasts</h2>${pick}<p class="sub">Loading…</p>`;
+  if (t.error) return `<h2>Broadcasts</h2>${pick}<div class="err">${esc(t.error)}</div>`;
+  let lastCtx = null;
+  const body = t.map(l => {
+    const ctx = l.player ? `${l.player} · ${holeName(l.hole)}${l.shot_number ? ` · stroke ${l.shot_number}` : ""}${l.club ? ` · ${l.club}` : ""}` : (l.kind === "opener" ? "Opening" : l.kind === "closer" ? "Sign-off" : null);
+    const head = ctx && ctx !== lastCtx ? `<div class="shotctx">${esc(ctx)}</div>` : "";
+    if (ctx) lastCtx = ctx;
+    const kind = !l.player && !["opener", "closer"].includes(l.kind) ? ` <span class="tag">${esc(KIND_LABEL[l.kind] || l.kind)}</span>` : "";
+    return head + `<div class="line"><div class="who ${COLOR_KEYS.has(l.speaker) ? "color" : ""}">${esc(l.name)}</div><div>${esc(l.text)}${kind}</div></div>`;
+  }).join("");
+  return `<h2>Broadcasts</h2>${pick}<div>${body || '<p class="empty">Nothing said in this session.</p>'}</div>`;
+}
+
+function renderHighlights() {
+  const r = state.data.records, h = state.data.highlights, ft = y => Math.round(y * 3);
+  const where = x => [x.course, holeName(x.hole)].filter(Boolean).join(" · ");
+  const card = (k, x, v) => `<div class="card"><div class="k">${k}</div>${x ? `<div class="v">${v(x)}</div><div class="sub">${esc(x.player)} · ${esc(where(x))}</div>` : '<div class="empty">None yet</div>'}</div>`;
+  const top = (title, rows, fmt) => `<div><h3>${title}</h3><table><tbody>${rows.length ? rows.map((x, i) =>
+    `<tr><td class="wrap">${i + 1}. <b>${esc(x.player)}</b><br><span class="sub">${esc(x.date)} · ${esc(where(x))}</span></td><td>${fmt(x)}</td></tr>`).join("")
+    : '<tr><td class="empty">None yet</td></tr>'}</tbody></table></div>`;
+  return `<h2>Season records</h2><div class="cards">
+    ${card("Longest drive", r.longest_drive, x => Math.round(x.v) + " yd")}
+    ${card("Closest approach", r.closest_approach, x => `${x.outcome === "holed" ? "holed" : ft(x.v) + " ft"} <span class="sub">${esc(x.club || "")}</span>`)}
+    ${card("Longest putt holed", r.longest_putt, x => ft(x.v) + " ft")}
+  </div>
+  <h2>Moments</h2>
+  ${h.moments.length ? h.moments.map(m => `<div class="moment"><div class="kind">${esc(m.kind)}</div><div><b>${esc(m.player)}</b> · ${esc(m.text)}
+    <div class="sub">${esc(m.date)} · ${esc(m.course)}${m.hole ? ` · hole ${m.hole}` : ""}</div></div></div>`).join("")
+    : '<p class="empty">No aces, eagles or hole-outs yet.</p>'}
+  <div class="grid2">
+    ${top("Longest drives", h.drives, x => x.v + " yd")}
+    ${top("Closest approaches", h.approaches, x => `${x.outcome === "holed" ? "holed" : x.v + " ft"} <span class="sub">${esc(x.club || "")} from ${x.from_yd} yd</span>`)}
+    ${top("Closest chips", h.chips, x => `${x.outcome === "holed" ? "holed" : x.v + " ft"} <span class="sub">${esc(x.club || "")} from ${x.from_yd} yd, ${esc(x.lie || "off the green")}</span>`)}
+    ${top("Longest putts holed", h.putts, x => x.v + " ft")}
+    <div><h3>Birdie streaks</h3><table><tbody>${h.streaks.length ? h.streaks.map(s =>
+      `<tr><td><b>${esc(s.player)}</b> <span class="sub">${esc(s.date)} · ${esc(s.course)} · holes ${s.holes[0]}–${s.holes[s.holes.length - 1]}</span></td><td>${s.length} in a row</td></tr>`).join("")
+      : '<tr><td class="empty">No back-to-back birdies yet.</td></tr>'}</tbody></table></div>
+    <div><h3>Bounce-backs</h3><table><tbody>${h.bounce_backs.length ? h.bounce_backs.map(b =>
+      `<tr><td><b>${esc(b.player)}</b></td><td>${b.count}</td></tr>`).join("")
+      : '<tr><td class="empty">No birdie straight after a bogey yet.</td></tr>'}</tbody></table></div>
+    <div><h3>Blow-ups</h3><table><tbody>${h.blowups.length ? h.blowups.map(b =>
+      `<tr><td><b>${esc(b.player)}</b> <span class="sub">${esc(b.date)} · ${esc(b.course)} · hole ${b.hole} (par ${b.par})</span></td><td>${b.score} <span class="sub">+${b.over}</span></td></tr>`).join("")
+      : '<tr><td class="empty">Nothing worse than a double yet.</td></tr>'}</tbody></table></div>
+  </div>`;
+}
+
+function renderBooth() {
+  const b = state.data.booth, preds = state.data.predictions;
+  const kinds = [...new Set(b.commentators.flatMap(c => Object.keys(c.kinds)))].sort();
+  const KIND = KIND_LABEL;
+  const nights = {};
+  b.calls.forEach(c => { (nights[c.who] = nights[c.who] || []); });
+  const cum = {};
+  Object.keys(nights).forEach(who => {
+    let calls = 0, right = 0;
+    nights[who] = b.calls.filter(c => c.who === who).map(c => { calls += c.calls; right += c.right; return { date: c.date, pct: Math.round(100 * right / calls) }; });
+  });
+  return `<h2>The booth</h2><div class="cards">${b.commentators.map(c => {
+    const p = preds.find(p => p.commentator === c.name);
+    return `<div class="card"><div class="k">${esc(c.name)}</div><div class="v">${c.lines} lines</div>
+      <div class="sub">${c.words.toLocaleString()} words · ${c.words_per_line} per line${p ? ` · putt calls ${p.right}/${p.calls} (${p.pct}%)` : ""}</div>
+      ${c.phrases.length ? `<div class="sub" style="margin-top:8px">Favourite phrases: ${c.phrases.slice(0, 6).map(x => `“${esc(x)}”`).join(", ")}</div>` : ""}</div>`;
+  }).join("")}</div>
+  <h2>Lines by kind</h2>
+  ${sortable("kinds", kinds.map(k => Object.assign({ kind: KIND[k] || k }, ...b.commentators.map(c => ({ ["c_" + c.key]: c.kinds[k] || 0 })))),
+    [{ key: "kind", label: "Kind" }, ...b.commentators.map(c => ({ key: "c_" + c.key, label: esc(c.name) }))],
+    r => `<tr><td>${esc(r.kind)}</td>${b.commentators.map(c => `<td>${r["c_" + c.key]}</td>`).join("")}</tr>`,
+    { key: b.commentators.length ? "c_" + b.commentators[0].key : "kind", dir: -1 })}
+  <h2>Putt calls over the season</h2>
+  ${sortable("pred", preds, [{ key: "commentator", label: "Commentator" }, { key: "calls", label: "Calls" }, { key: "right", label: "Right" }, { key: "pct", label: "%" }],
+    p => `<tr><td>${esc(p.commentator)} <span class="sub">${esc(p.role)}</span></td><td>${p.calls}</td><td>${p.right}</td><td>${dash(p.pct, "%")}</td></tr>`)}
+  <div class="charts" style="margin-top:12px">${Object.entries(nights).map(([who, pts]) => lineChart(pts, "pct", `${esc(who)}: running call accuracy`, v => v + "%")).join("")}</div>
+  <h2>Nights on air</h2>
+  ${sortable("nights", b.nights, [{ key: "date", label: "Night" }, { key: "rounds", label: "Rounds" }, { key: "lines", label: "Lines" },
+    { key: "per", label: "Lines / round", val: n => n.rounds ? n.lines / n.rounds : null }],
+    n => `<tr><td>${esc(n.date)}</td><td>${n.rounds}</td><td>${n.lines}</td><td>${n.rounds ? Math.round(n.lines / n.rounds) : "–"}</td></tr>`, { key: "date", dir: -1 })}`;
+}
+
+const RENDER = { players: renderPlayers, versus: renderVersus, rounds: renderRounds, courses: renderCourses,
+                 shots: renderShots, broadcasts: renderBroadcasts, highlights: renderHighlights, booth: renderBooth };
+function render() {
+  if (!state.data) return;
+  $("#main").innerHTML = RENDER[state.tab]();
+}
+
+function showTabs() {
+  $("#tabs").innerHTML = TABS.map(([k, label]) => `<button data-tab="${k}" class="${k === state.tab ? "on" : ""}">${label}</button>`).join("");
+}
+
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-tab],[data-ctx],[data-sort],[data-player],[data-round],[data-course],[data-shot]");
+  if (!t) return;
+  if (t.dataset.tab) {
+    state.tab = t.dataset.tab;
+    history.replaceState(null, "", "#" + state.tab);
+    showTabs();
+    render();
+  } else if (t.dataset.ctx !== undefined) {
+    state.ctx = t.dataset.ctx;
+    document.querySelectorAll("#ctx button").forEach(b => b.classList.toggle("on", b === t));
+    load();
+  } else if (t.dataset.sort) {
+    const [id, key] = t.dataset.sort.split(":");
+    const s = state.sort[id] || shownSort[id];
+    state.sort[id] = { key, dir: s && s.key === key ? -s.dir : 1 };
+    render();
+  } else if (t.dataset.player) {
+    state.player = t.dataset.player;
+    render();
+  } else if (t.dataset.round) {
+    state.round = state.round === +t.dataset.round ? null : +t.dataset.round;
+    render();
+  } else if (t.dataset.course) {
+    state.course = t.dataset.course;
+    render();
+  } else if (t.dataset.shot) {
+    state.shotOpen = state.shotOpen === +t.dataset.shot ? null : +t.dataset.shot;
+    render();
+  }
+});
+
+document.addEventListener("change", (e) => {
+  const t = e.target;
+  if (t.dataset.versus !== undefined) {
+    state.versus[+t.dataset.versus] = t.value;
+    render();
+  } else if (t.dataset.shotf) {
+    if (t.value) state.shotFilter[t.dataset.shotf] = t.value; else delete state.shotFilter[t.dataset.shotf];
+    loadShots();
+  } else if (t.dataset.session !== undefined) {
+    loadTranscript(+t.value);
+  }
+});
+
+showTabs();
+load();
+</script>
+</body>
+</html>

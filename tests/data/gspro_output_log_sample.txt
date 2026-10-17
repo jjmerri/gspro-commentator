@@ -1,0 +1,1122 @@
+## excerpt: course load
+
+Selected Course: paynes_valley_gsp
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Loading standard coure proc
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Loading Course file C:\GSproV1\Courses/paynes_valley_gsp/paynes_valley_gsp.gkd
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+GreenKeeper Course Parse
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Paynes Valley
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+DB Round Found: 1452
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Loading Course file C:\GSproV1\Courses/paynes_valley_gsp/paynes_valley_gsp.gkd
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+GreenKeeper Course Parse
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Paynes Valley
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SetActiveHolesBasedOnToggle
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1775)
+
+WARNING: Shader Unsupported: 'Hidden/PostProcessing/FinalPass' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Hidden/PostProcessing/FinalPass' - Pass '' has no vertex shader
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script (Unknown) on this Behaviour is missing!
+ 
+(Filename:  Line: 1575)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Auto Fence Builder') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'newsCheckStatic') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'ArboreumWindActivator') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Lake Polygon') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'RamSpline') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object '[Finished Fence] metal Black School Fence 2') is missing!
+ 
+(Filename:  Line: 1775)
+
+The referenced script on this Behaviour (Game Object 'Directional Light') is missing!
+ 
+(Filename:  Line: 1775)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 2)
+WARNING: Shader Unsupported: 'Hidden/PostProcessing/Uber' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Hidden/PostProcessing/Uber' - Pass '' has no vertex shader
+UnloadTime: 0.727600 ms
+GPUInstancer Failed
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Loading course Paynes Valley
+
+## excerpt: hole layout json
+
+[{"active":true,"played":true,"par":4,"strokeIdx":17,"pinPos":{"x":981.422668,"y":33.2545052,"z":1505.61475,"normalized":{"x":0.545979142,"y":0.0184999444,"z":0.8375945,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1797.54614,"sqrMagnitude":3231172.0},"pinIndex":4,"pinDifficulty":0,"teePos":{"x":971.300049,"y":40.3296471,"z":1650.57532,"normalized":{"x":0.507052541,"y":0.0210534837,"z":0.8616579,"normalized":{"x":0.5070526,"y":0.0210534856,"z":0.861658,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.9999999},"magnitude":1915.58069,"sqrMagnitude":3669449.25},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1233.33765,"y":112.596252,"z":518.1329,"normalized":{"x":0.9186987,"y":0.0838716254,"z":0.385951072,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1342.48328,"sqrMagnitude":1802261.38},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":5,"strokeIdx":9,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1221.49573,"y":117.865204,"z":218.198669,"normalized":{"x":0.98000586,"y":0.09456324,"z":0.175060764,"normalized":{"x":0.9800059,"y":0.0945632458,"z":0.175060779,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1246.41675,"sqrMagnitude":1553554.63},"teeIndex":1,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":1076.39014,"y":103.125519,"z":409.953552,"normalized":{"x":0.930793345,"y":0.08917636,"z":0.3545016,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1156.42224,"sqrMagnitude":1337312.5},"ShotWPPos1":{"x":1038.04541,"y":94.6022644,"z":575.1729,"normalized":{"x":0.8719341,"y":0.07946371,"z":0.483131915,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1190.509,"sqrMagnitude":1417311.75}},{"active":false,"played":false,"par":3,"strokeIdx":15,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1017.3017,"y":91.49103,"z":752.6805,"normalized":{"x":0.801795542,"y":0.07210948,"z":0.5932319,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1268.77942,"sqrMagnitude":1609801.25},"teeIndex":1,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":13,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1237.00586,"y":114.275116,"z":753.247253,"normalized":{"x":0.8514641,"y":0.07865861,"z":0.5184802,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1452.79858,"sqrMagnitude":2110623.75},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1269.23157,"y":100.3378,"z":957.445,"normalized":{"x":0.796744764,"y":0.0629858449,"z":0.601024568,"normalized":{"x":0.7967448,"y":0.06298585,"z":0.6010246,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1593.02148,"sqrMagnitude":2537717.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":5,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1241.03467,"y":99.03815,"z":1113.72607,"normalized":{"x":0.7429399,"y":0.0592887476,"z":0.6667272,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1670.4375,"sqrMagnitude":2790361.25},"teeIndex":1,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":3,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1248.53174,"y":80.34418,"z":1163.69653,"normalized":{"x":0.7307135,"y":0.0470220931,"z":0.681063,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1708.64746,"sqrMagnitude":2919476.25},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1219.19836,"y":66.9631348,"z":1372.0354,"normalized":{"x":0.663803935,"y":0.0364587046,"z":0.7470175,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1836.68445,"sqrMagnitude":3373409.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":1,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1247.7002,"y":68.86212,"z":1610.06323,"normalized":{"x":0.6121916,"y":0.0337876156,"z":0.789987266,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":2038.08765,"sqrMagnitude":4153801.5},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1489.349,"y":72.37024,"z":1734.37891,"normalized":{"x":0.6511555,"y":0.0316408575,"z":0.7582845,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":2287.24023,"sqrMagnitude":5231468.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":5,"strokeIdx":11,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1673.74719,"y":88.55887,"z":1771.35767,"normalized":{"x":0.68634367,"y":0.0363148153,"z":0.7263702,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":2438.643,"sqrMagnitude":5946980.5},"teeIndex":1,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":1448.87683,"y":81.9867554,"z":1628.93066,"normalized":{"x":0.6641348,"y":0.03758101,"z":0.7466677,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":2181.60059,"sqrMagnitude":4759381.0},"ShotWPPos1":{"x":1280.67737,"y":70.24982,"z":1546.53735,"normalized":{"x":0.637409568,"y":0.0349642374,"z":0.7697315,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":2009.19067,"sqrMagnitude":4036847.25}},{"active":false,"played":false,"par":4,"strokeIdx":7,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1188.41956,"y":69.0015259,"z":1498.729,"normalized":{"x":0.6209178,"y":0.03605147,"z":0.783046246,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1913.97253,"sqrMagnitude":3663291.0},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1060.38892,"y":45.9755859,"z":1759.98853,"normalized":{"x":0.5159388,"y":0.022369707,"z":0.8563334,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":2055.261,"sqrMagnitude":4224098.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":12,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":866.293,"y":46.7443237,"z":1763.30615,"normalized":{"x":0.440823227,"y":0.02378639,"z":0.8972787,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1965.171,"sqrMagnitude":3861897.25},"teeIndex":1,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":4,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":594.1266,"y":43.3204956,"z":1554.60425,"normalized":{"x":0.3568693,"y":0.02602098,"z":0.9337918,"normalized":{"x":0.35686934,"y":0.0260209814,"z":0.9337919,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1664.82959,"sqrMagnitude":2771657.5},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":724.587036,"y":41.7188721,"z":1764.70239,"normalized":{"x":0.3797377,"y":0.0218638033,"z":0.9248358,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1908.12512,"sqrMagnitude":3640941.25},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":5,"strokeIdx":16,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":921.981,"y":59.83026,"z":1689.53027,"normalized":{"x":0.478788644,"y":0.0310701076,"z":0.877380252,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1925.65344,"sqrMagnitude":3708141.25},"teeIndex":1,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":723.4576,"y":48.3598022,"z":1536.12183,"normalized":{"x":0.425902367,"y":0.02846961,"z":0.9043211,"normalized":{"x":0.4259024,"y":0.028469611,"z":0.904321134,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1698.64648,"sqrMagnitude":2885399.75},"ShotWPPos1":{"x":540.215942,"y":43.13501,"z":1473.6792,"normalized":{"x":0.34405,"y":0.0274716057,"z":0.93854934,"normalized":{"x":0.34405002,"y":0.0274716076,"z":0.9385494,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1570.167,"sqrMagnitude":2465424.25}},{"active":false,"played":false,"par":4,"strokeIdx":2,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":514.7251,"y":47.13788,"z":1385.44067,"normalized":{"x":0.3480885,"y":0.03187751,"z":0.9369195,"normalized":{"x":0.348088533,"y":0.031877514,"z":0.93691957,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1478.719,"sqrMagnitude":2186609.75},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":743.1284,"y":45.35791,"z":1469.56543,"normalized":{"x":0.451092273,"y":0.0275330637,"z":0.892052531,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1647.39783,"sqrMagnitude":2713919.75},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":3,"strokeIdx":8,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":1002.66504,"y":43.26465,"z":1688.904,"normalized":{"x":0.5103691,"y":0.02202225,"z":0.8596734,"normalized":{"x":0.5103692,"y":0.022022251,"z":0.85967344,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1964.588,"sqrMagnitude":3859606.0},"teeIndex":1,"teeType":0,"shotWayPointCount":0,"ShotWPPos0":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":18,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":905.1277,"y":43.0585327,"z":1373.3252,"normalized":{"x":0.5501171,"y":0.0261700451,"z":0.8346774,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1645.33655,"sqrMagnitude":2707132.25},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":658.1377,"y":44.84308,"z":1338.89331,"normalized":{"x":0.44094,"y":0.0300440267,"z":0.8970336,"normalized":{"x":0.440940022,"y":0.0300440285,"z":0.897033632,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1492.57886,"sqrMagnitude":2227791.5},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":5,"strokeIdx":6,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":593.905151,"y":50.8601074,"z":1287.3562,"normalized":{"x":0.4186381,"y":0.035850808,"z":0.9074452,"normalized":{"x":0.41863814,"y":0.03585081,"z":0.907445252,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1418.66,"sqrMagnitude":2012596.13},"teeIndex":1,"teeType":0,"shotWayPointCount":2,"ShotWPPos0":{"x":763.5948,"y":55.1661377,"z":1119.19141,"normalized":{"x":0.563127,"y":0.04068328,"z":0.8253683,"normalized":{"x":0.563127041,"y":0.0406832844,"z":0.825368345,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":0.99999994,"sqrMagnitude":0.99999994},"magnitude":1355.99036,"sqrMagnitude":1838709.75},"ShotWPPos1":{"x":840.982544,"y":60.9343872,"z":951.693054,"normalized":{"x":0.6614155,"y":0.0479236431,"z":0.748487055,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1271.489,"sqrMagnitude":1616684.25}},{"active":false,"played":false,"par":4,"strokeIdx":14,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":980.897034,"y":62.1080933,"z":899.299744,"normalized":{"x":0.73629874,"y":0.0466207042,"z":0.6750487,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":1332.19983,"sqrMagnitude":1774756.38},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":875.636658,"y":57.5927734,"z":1130.84155,"normalized":{"x":0.6117414,"y":0.0402357355,"z":0.7900339,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1431.38367,"sqrMagnitude":2048859.13},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}},{"active":false,"played":false,"par":4,"strokeIdx":10,"pinPos":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0},"pinIndex":0,"pinDifficulty":0,"teePos":{"x":900.6477,"y":74.6560059,"z":1207.99243,"normalized":{"x":0.59699434,"y":0.0494857319,"z":0.8007178,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1508.637,"sqrMagnitude":2275985.5},"teeIndex":1,"teeType":0,"shotWayPointCount":1,"ShotWPPos0":{"x":1036.78174,"y":61.1702881,"z":989.7944,"normalized":{"x":0.722649336,"y":0.042636428,"z":0.6898986,"magnitude":1.0,"sqrMagnitude":1.0},"magnitude":1434.69543,"sqrMagnitude":2058351.13},"ShotWPPos1":{"x":0.0,"y":0.0,"z":0.0,"magnitude":0.0,"sqrMagnitude":0.0}}]
+## excerpt: final play (holes 2-4, water penalty, hole out)
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Distance to cup = 31mm, time:177476.3
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+CaptureSpeed = 1.616 , PHspeed = 1.056 ,BallSpeed ,1.078103 ,BallSpeed2 ,0.3381278 , PFrameBS ,1.078103 , P2FramesBS ,1.100577 , P3FramesBS ,1.123151 , PrePinHitBS ,1.078103 right , True ,Pin Hit ,False
+
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Hole out !!! 
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Lip In Launched. Source = 2
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft18.398
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 1  strokes: 1  Previous Score: 2
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 135.48, el 15.71, az -5.35, ts 1760.35, sa -15.42, cy 231.52, id 3389
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Regular Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+UnderGround Encountered type, 3 : (675.0, 87.8, 440.7)
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+tdpoint corrected
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Force 31.42|| SurfMul 0.72|| BallSpeed 68.56|| AngleSpeedBounce 0.34|| descent angle 36.0|| ExitAngle 37.6
+|| FinalBounce 0.23|| SpinAngleLoss 1.000|| SurfAngl -2.5
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Using Material TVGrough
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+magnitude: 8.85591 | yForce 5.689349 | material TVGrough | SoundMultiplier 0.3991807 | SoundForceScale 0.7983614 | elevation 1391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft34.956
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 2  strokes: 1  Previous Score: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 668.351 Y 87.64769 Z 432.4624
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 55.61399 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Putt Out Mode = false or only one player
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 66.71, el 32.65, az -1.01, ts 9230.18, sa 0.36, cy 72.82, id 3391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Regular Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Penalty Surface TVGrough, Spin75%, Speed 93%, VLA 100%
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Cup hit off Center 772.2894
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Force 18.59|| SurfMul 0.72|| BallSpeed 43.69|| AngleSpeedBounce 0.31|| descent angle 47.2|| ExitAngle 47.3
+|| FinalBounce 0.20|| SpinAngleLoss 1.000|| SurfAngl -1.5
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Using Material TVGgreen
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+magnitude: 4.536862 | yForce 3.41639 | material TVGgreen | SoundMultiplier 0.2243377 | SoundForceScale 0.4486753 | elevation 1391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft10.699
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 2  strokes: 1  Previous Score: 1
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 615.8561 Y 91.16206 Z 464.1463
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 5.824333 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Putt Out Mode = false or only one player
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 6.64, el 0, az 0.93, ts 0, sa 45, cy 0, id 3393
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Putting Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+opt- puttVector (2.901, 0.000, -2.169) , 3.622
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Roll dist ft21.319
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Ball and Pin on the same surface
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 2  strokes: 1  Previous Score: 2
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 621.2371 Y 91.04398 Z 460.5057
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 0.7237145 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Select Shot - active user ball is within Gimmie distance
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 2  strokes: 1  Previous Score: 3
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Real putt made and all players done - AllPlayersHoledOut
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+(-27.7, -25.3, 0.0)
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 134.73, el 14.73, az -1.37, ts 1821.45, sa -13.91, cy 226.9, id 3395
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Regular Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Force 30.98|| SurfMul 0.78|| BallSpeed 67.79|| AngleSpeedBounce 0.37|| descent angle 34.4|| ExitAngle 31.4
+|| FinalBounce 0.27|| SpinAngleLoss 1.000|| SurfAngl 2.2
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Using Material TVGfairway
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+magnitude: 10.23396 | yForce 4.997165 | material TVGfairway | SoundMultiplier 0.3459358 | SoundForceScale 0.6918716 | elevation 1391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft95.460
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 3  strokes: 1  Previous Score: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 730.8846 Y 84.31388 Z 681.5558
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 196.7942 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Putt Out Mode = false or only one player
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 125.55, el 12.16, az -6.84, ts 2471.45, sa -3.8, cy 196, id 3397
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Regular Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Force 28.99|| SurfMul 1.05|| BallSpeed 62.37|| AngleSpeedBounce 0.49|| descent angle 35.4|| ExitAngle 34.4
+|| FinalBounce 0.35|| SpinAngleLoss 1.000|| SurfAngl 0.0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Using Material TVGwater
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+magnitude: 12.28738 | yForce 6.940266 | material TVGwater | SoundMultiplier 0.297243 | SoundForceScale 0.9908101 | elevation 1391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft0.000
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Haz entry Point (903.0, 75.3, 766.9), Haz ball pos (901.312, 155.296, 765.761), 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Haz entry Point (903.0, 75.3, 766.9), Haz ball pos (904.597, 155.296, 771.610), 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Haz entry Point (903.0, 75.3, 766.9), Haz ball pos (903.449, 155.296, 776.871), 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 3  strokes: 1  Previous Score: 1
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 3  strokes: 1  Previous Score: 2
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 904.6236 Y 74.50098 Z 768.0043
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 23.62363 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Putt Out Mode = false or only one player
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 34.63, el 29.06, az -1.1, ts 6114.42, sa 1.61, cy 22.13, id 3399
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Regular Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Penalty Surface TVGrough, Spin64%, Speed 95%, VLA 100%
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+UnderGround Encountered type, 3 : (912.4, 76.3, 754.0)
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+tdpoint corrected
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Cup hit off Center 1183.668
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Force 11.81|| SurfMul 0.72|| BallSpeed 28.64|| AngleSpeedBounce 0.59|| descent angle 19.0|| ExitAngle 16.8
+|| FinalBounce 0.47|| SpinAngleLoss 0.951|| SurfAngl -3.9
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Using Material TVGgreen
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+magnitude: 6.812688 | yForce 2.749867 | material TVGgreen | SoundMultiplier 0.1730667 | SoundForceScale 0.3461334 | elevation 1391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft33.971
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 3  strokes: 1  Previous Score: 3
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 916.96 Y 76.20332 Z 744.6995
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 2.860625 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Putt Out Mode = false or only one player
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 4.59, el 0, az 1.37, ts 0, sa 45, cy 0, id 3401
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Putting Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+opt- puttVector (-0.701, 0.000, 2.402) , 2.502
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Roll dist ft9.569
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Ball and Pin on the same surface
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 3  strokes: 1  Previous Score: 4
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 915.9417 Y 76.20599 Z 747.4327
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 0.2637074 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Select Shot - active user ball is within Gimmie distance
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 3  strokes: 1  Previous Score: 5
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Real putt made and all players done - AllPlayersHoledOut
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ * ------- Shot Fired! ------- *
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+{"BallCurveature":1.0,"PlayMode":0,"ShotBoost":100.0}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt Vars: sp 103.03, el 21.91, az -2.46, ts 4655.84, sa -14.96, cy 143.9, id 3403
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LaunchExt - Regular Mode
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Cup hit off Center 1134.053
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Force 24.75|| SurfMul 0.72|| BallSpeed 54.66|| AngleSpeedBounce 0.32|| descent angle 43.8|| ExitAngle 42.6
+|| FinalBounce 0.21|| SpinAngleLoss 1.000|| SurfAngl 0.1
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOR EYEXO2"}
+LM Type {"connectType":"Uneekor","LMType":"UNEEKOREYEXO2"}
+Using Material TVGgreen
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+magnitude: 6.382825 | yForce 4.304659 | material TVGgreen | SoundMultiplier 0.2926661 | SoundForceScale 0.5853322 | elevation 1391
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Roll dist ft28.810
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+ActivePlayer: 0  currentHole: 4  strokes: 1  Previous Score: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Selecting shot for player: 0
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Data for selected player: X 788.5396 Y 75.49072 Z 807.2861
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Logging tdist: 26.98104 and ActiveGameGimmieDistance: 1.22
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+SelectShotCopyScoreToTeammates = true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Putt Out Mode = false or only one player
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+

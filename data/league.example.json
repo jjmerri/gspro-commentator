@@ -1,0 +1,153 @@
+{
+  "league_name": "Tuesday Night Sim League",
+  "squabbit_invite": "ABC123",
+  "format": "12 two-person teams, 12 weeks, 9 holes a week, both players play their own ball",
+  "season": 2026,
+  "prizes": [
+    "1st - $300pp",
+    "2nd - $150pp",
+    "week winners - $25pp",
+    "CTP - $10pp"
+  ],
+  "ctp_prize": 10,
+  "week_winner_prize": 25,
+  "rules": [
+    "Two closest-to-the-pin holes each week; an unclaimed CTP carries over to the next week.",
+    "Mulligans only for misreads, never for a shot someone actually swung at."
+  ],
+  "gspro_settings": [
+    "Pins: Thursday",
+    "Gimme/Auto Putt: 4'",
+    "Stimp: 10",
+    "Mulligan: Yes"
+  ],
+  "week": 4,
+  "total_weeks": 12,
+  "tonight": {
+    "course": "Example Links",
+    "matchup": "Divot Diggers vs. Grip It & Rip It"
+  },
+  "teams": [
+    {
+      "name": "Divot Diggers",
+      "rank": 1,
+      "points": 31,
+      "players": [
+        {
+          "name": "Mike",
+          "gspro_name": "MikeD",
+          "handicap": 6.1,
+          "notes": "Long hitter, fights a hook under pressure",
+          "squabbit_id": "exampleSquabbitId01"
+        },
+        {
+          "name": "Sarah",
+          "gspro_name": "SarahK",
+          "handicap": 9.4,
+          "notes": "Best putter in the league"
+        }
+      ]
+    },
+    {
+      "name": "Grip It & Rip It",
+      "rank": 2,
+      "points": 29,
+      "players": [
+        {
+          "name": "Tony",
+          "gspro_name": "TonyB",
+          "handicap": 12.0,
+          "aliases": [
+            "Big T"
+          ],
+          "notes": "Swings out of his shoes off the tee"
+        },
+        {
+          "name": "Priya",
+          "gspro_name": "PriyaS",
+          "handicap": 8.8,
+          "notes": "Fairways and greens, never flustered"
+        }
+      ]
+    },
+    {
+      "name": "Shank Redemption",
+      "rank": 3,
+      "points": 24,
+      "players": [
+        {
+          "name": "Dave",
+          "handicap": 15.2
+        },
+        {
+          "name": "Luis",
+          "handicap": 11.7
+        }
+      ]
+    }
+  ],
+  "storylines": [
+    "Top two teams are separated by two points with tonight's head-to-head match.",
+    "Tony has promised to buy the first round if he misses a fairway on the opening hole.",
+    "Sarah has not three-putted in three weeks."
+  ],
+  "handicap_allowances": {
+    "best ball": [
+      0.85
+    ],
+    "team sum": [
+      1.0
+    ],
+    "scramble": [
+      0.35,
+      0.15
+    ],
+    "alternate shot": [
+      0.5,
+      0.5
+    ]
+  },
+  "schedule": [
+    {
+      "week": 1,
+      "date": "2026-10-06",
+      "format": "scramble",
+      "course": "Wynn Golf Club",
+      "holes": "Front 9",
+      "hole_count": 9,
+      "start_hole": 1,
+      "tees": "White",
+      "end_date": "2026-10-12",
+      "ctp_holes": [
+        3,
+        8
+      ]
+    },
+    {
+      "week": 2,
+      "date": "2026-10-13",
+      "format": "best ball",
+      "course": "Palmer Hills",
+      "gspro_course": "Palmer Hills Golf Course",
+      "holes": "Back 9",
+      "hole_count": 9,
+      "start_hole": 10,
+      "tees": "Blue",
+      "end_date": "2026-10-19",
+      "ctp_holes": [
+        12,
+        16
+      ]
+    },
+    {
+      "week": 3,
+      "date": "2026-10-20",
+      "format": "team sum"
+    },
+    {
+      "week": 4,
+      "date": "2026-10-27",
+      "format": "alternate shot"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+# Copy to config.yaml and edit. This is the cloud setup the booth was built and tuned on: GPT for
+# the fast calls, Claude for the pre-shot look and the round wraps, OpenAI voices. It needs
+# OPENAI_API_KEY and ANTHROPIC_API_KEY in .env. Every call is one `provider`/`model` setting, so
+# running a model or the voices on the PC itself instead is a line change (see the local blocks).
+
+# Optional league file. Leave it unset to run without a league: every round is practice and players
+# go by the names on GSPro's setup screen. To add league features (roster, schedule, standings,
+# handicaps), copy data/league.example.json to data/league.json, fill it in, and point here.
+# league_file: data/league.json
+history_file: data/history.json        # optional: earlier seasons (built by `import-league`)
+log_dir: logs
+process_priority: below_normal   # run under GSPro so OCR bursts don't stutter the game
+# max_cpu_cores: 8               # optional hard cap on how many cores the booth may use
+
+personas:
+  pbp:
+    name: Nigel
+    style: >-
+      Calm, polished British play-by-play voice. Describes the strike and the flight,
+      builds tension on big moments, understated praise.
+  color:
+    name: Duke
+    style: >-
+      Opinionated former mini-tour grinder turned color analyst. Dry humor, reads the
+      launch numbers like a coach, needles players about their tendencies, never mean.
+
+llm:
+  # Each kind of call gets the model that fits its latency and quality budget (docs/booth.md,
+  # "Models and voices"). `effort: none` skips GPT's reasoning for the lowest latency, and
+  # `service_tier: fast` trims latency further for ~2x a tiny per-token price.
+  # The spoken pre-shot line, reactions, and between-hole segments.
+  live:    { provider: openai, model: gpt-6-luna, effort: none, service_tier: fast, max_tokens: 400 }
+  # Every flight and result line for a shot, written at setup in one reply. Keep it its OWN block
+  # with a roomy max_tokens: that reply carries ~8 flight + ~10 result lines, and a truncated reply
+  # loses the whole shot's plan.
+  flight:  { provider: openai, model: gpt-6-luna, effort: none, service_tier: fast, max_tokens: 900 }
+  # The hazard read from a screenshot of the hole (needs screen.send_images: true).
+  preshot: { provider: anthropic, model: claude-haiku-5-5, effort: low, vision: true, max_tokens: 900 }
+  # The opener is raced against the course load, so it wants a fast model; the closer is fetched
+  # on the last hole with its latency hidden, so it can take the richest one.
+  opener:  { provider: anthropic, model: claude-sonnet-5-5, effort: low }
+  closer:  { provider: anthropic, model: claude-opus-5-5, effort: medium, max_tokens: 2000 }
+  # segment: { ... }   # between-hole segments; omit to reuse `live`
+
+  # --- Local alternative: models on the PC itself (no per-token cost) --------
+  # Install Ollama (https://ollama.com), `ollama pull qwen3:8b`, then replace the blocks above.
+  # Quality and speed are well below the cloud mix; the pre-shot hazard look needs a vision model
+  # (e.g. gemma3:12b, ~8-10 GB of VRAM free next to GSPro) or leave `preshot` out.
+  # live:   { provider: ollama, model: qwen3:8b, effort: null, service_tier: null, max_tokens: 400 }
+  # flight: { provider: ollama, model: qwen3:8b, effort: null, service_tier: null, max_tokens: 900 }
+
+tts:
+  # openai (cloud, needs OPENAI_API_KEY) | kokoro (on the PC's CPU) | console (print only)
+  provider: openai
+  openai_voices:
+    pbp: fable
+    color: ballad
+  speed: 1.05
+  # Local alternative: provider: kokoro, after `pip install -e ".[local]"` and downloading the two
+  # model files into models/ (docs/setup.md, Setup).
+  # voices:             # Kokoro voice ids
+  #   pbp: bm_george
+  #   color: am_michael
+  # kokoro_model: models/kokoro-v1.0.onnx
+  # kokoro_voices: models/voices-v1.0.bin
+  # Cloud voice (openai): a slow request gets a second one sent alongside it, and a line that misses
+  # its moment is dropped, never played late.
+  # hedge_after_seconds: 2.5          # send a second request if the first hasn't answered by then
+  # prepare_deadline_seconds: 12      # lines voiced ahead (setup branches, wraps, closer) give up after
+  # live_deadline_seconds: 5          # a line voiced on demand must be ready within this
+  # flight_audio_deadline_seconds: 4  # a mid-flight call must start within this of impact
+
+source:
+  type: connector_log     # GSPconnect's debug log; falls back to gspro_log if it isn't there
+  connector_log: 'C:\GSProV1\Core\GSPC\ConnectDebug.txt'
+  gspro_log_truth: true   # tail GSPro's own log for strokes, penalties, holed shots, round ends
+  # type: gspro_log       # any launch monitor: shots from GSPro's own log (ball data, no club data)
+  # type: gspro_sniffer   # third-party Open Connect connectors instead (needs Npcap); or: replay
+  # port: 921
+  gspro_courses_dirs:                  # course libraries for par, stroke index and yardages
+    - 'C:\GSProV1\Courses'
+    - 'C:\GSProV1\Core\GSP\Courses'
+  # iface: '\Device\NPF_Loopback'   # only if auto-detect picks the wrong adapter
+  replay_file: data/sample_shots.jsonl
+  replay_speed: 1.0
+
+squabbit:
+  enabled: false          # pull live handicaps at round start (needs SQUABBIT_EMAIL/PASSWORD in .env
+                          # and "squabbit_invite" in the league file)
+  timeout_seconds: 15     # if Squabbit is slow or offline, the league file's handicaps stand
+
+screen:
+  monitor: 1
+  capture: monitor           # framebuffer grab (never stalls GSPro). "window" is occlusion-proof
+  window_title: GSPro        # but forces a synchronous render each grab and can freeze the game
+  ocr_threads: 6             # cap OCR cores so it can't starve GSPro (null = all cores)
+  follow_poll_seconds: 0.3   # how often the HUD is read while following a shot
+  follow_max_seconds: 25
+  send_images: true       # screenshots for the vision call (the pre-shot hazard look)
+  ocr: true               # check the regions with `calibrate` + `ocr-test` first
+  # Boxes around the GSPro HUD, as fractions of the screen. The built-in defaults fit the 3.1.x
+  # release HUD (player box, hole box, both tile panels, minimap lie and slope, club box) and
+  # adjust themselves to the screen's shape (16:10, 16:9, ...), so only list a region here to move
+  # it; anything not listed keeps its default. Check with `calibrate` and `ocr-test`. A region you
+  # list is used exactly as written, measured on your screen.
+  # regions:
+  #   lie: {left: 0.84, top: 0.45, width: 0.16, height: 0.53}
+
+commentary:
+  enabled: true           # false (or `run --no-commentary`): record shots and rounds only, no talking
+  interest_threshold: 0.5
+  routine_comment_rate: 0.3
+  min_seconds_between_comments: 4
+  recent_lines: 30   # shown to the model; a season-wide check catches older repeats
+  max_words_per_line: 28
+  segments_on_hole_change: true
+  max_speech_backlog: 4
+  in_flight: true
+  flight_deadline_seconds: 3.0   # drop a mid-flight line that can't start by then
+  min_flight_carry: 50           # no mid-flight call on chips and putts
+  preshot: true
+  preshot_rate: 0.6              # share of shots that get a setup line
+  preshot_settle_seconds: 1.5
+  # Carry prediction: penalties per lie are learned from your shots (keep GSPro's CARRY (raw)
+  # and CARRY (game) tiles visible). Override a lie's starting penalty, or seed a course's
+  # altitude before it has shots, if you need to:
+  # lie_carry_factors: {pine straw: 0.97}
+  # course_altitude_ft: {"Example Links": 5200}
+  big_moment_threshold: 0.9      # shots this interesting get a three- or four-line exchange
+  # Rounds. The opener plays when everyone is on shot 1 at even par and nothing has been
+  # recorded on the course today (front or back nine). The wrap-up plays when GSPro's
+  # scorecard shows every hole, or after round_end_idle_seconds of quiet on the last green.
+  # The setup screen's HOLES tab (or GSPro's default of 18 when it isn't opened) sets the round's
+  # holes; round_holes is the guess only when the booth didn't see the setup screen. With
+  # source.gspro_log_truth on, GSPro's log corrects it (a longer round plays on, and GSPro's hole
+  # layout sets the real count at the end).
+  opener: true
+  closer: true
+  round_holes: 9
+  # round_format: best ball      # overrides the league file's schedule for tonight
+  round_end_idle_seconds: 60
+
+# Where the pre-shot hazard read comes from. llm: the `preshot` vision model above reads a
+# screenshot. jev: TypeSafe's Jev reads just the minimap in about a third of a second and also
+# reads the carry over water and the front/back of the green, so the setup line can use them.
+# Needs `pip install -e ".[jev]"` and TYPESAFE_API_KEY; falls back to `preshot` if Jev fails.
+minimap:
+  provider: llm
+  # threshold: 0.7       # how sure Jev must be before a hazard becomes a fact
+  # sand_threshold: 0.85 # how sure Jev must be that a sand-coloured patch is a bunker
+  # tree_threshold: 0.85 # ... that a leafy patch near the line is a tree
+  # choice_confidence: 0.8 # ... of the pin's side of the green, or a dogleg
+
+putt_read:
+  enabled: false       # read the putt's break from the drift of GSPro's green-grid dots (grid on; screen.capture: monitor)
+  # gentle_px: 1.5     # sideways drift (px/frame at 4K) below which the break isn't called
+  # slope_px: 0.7      # drift toward/away from the golfer needed to call it uphill/downhill
+
+overlay:
+  enabled: true        # the clickable ON AIR / OFF AIR badge over GSPro (toggles commentary live)
+  left: 0.595          # top-left corner, as fractions of the primary screen
+  top: 0.008
+  scale: 1.0

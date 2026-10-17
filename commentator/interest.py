@@ -1,0 +1,97 @@
+import re
+
+from .hud import Hud
+from .models import Shot
+from .state import ShotRecord
+
+TROUBLE_LIES = ("water", "hazard", "out of bounds", "bunker", "sand", "trees", "deep rough", "fescue", "native")
+
+
+def _to_feet(to_pin: str | None) -> float | None:
+    """Parse a 'to pin' readout to feet ('8 feet 6 inches', '21 ft', '12 yards')."""
+    if not to_pin:
+        return None
+    if m := re.search(r"(\d+)\s*(?:feet|ft)\b", to_pin, re.I):
+        inch = re.search(r"\b(\d+)\s*(?:inch|inches|in)\b", to_pin, re.I)
+        return int(m.group(1)) + (int(inch.group(1)) / 12 if inch else 0)
+    if m := re.search(r"([\d.]+)\s*(?:yards?|yds?)\b", to_pin, re.I):
+        return float(m.group(1)) * 3
+    return None
+
+
+def score_shot(shot: Shot, prior: list[ShotRecord], hud: Hud) -> tuple[float, list[str]]:
+    """Rough 0..1 'is this worth talking about' score, plus tags explaining why.
+
+    Tags go into the prompt too, so the model knows what stood out.
+    """
+    score = 0.0
+    tags: list[str] = []
+    if hud.lie in TROUBLE_LIES:
+        score += 0.6
+        tags.append(f"in_{hud.lie.replace(' ', '_')}")
+    elif hud.lie == "rough":
+        score += 0.5  # a missed green into the rough is a bad shot worth a word
+        tags.append("in_rough")
+    elif hud.lie == "green" and not shot.is_putt:
+        score += 0.5  # found the green: a good approach (often a close one) is worth noting
+        tags.append("found_green")
+
+    if not prior:
+        score += 0.4
+        tags.append("first_shot_of_night")
+
+    if shot.is_putt:
+        tags.append("putt")
+        if (shot.ball_speed or 0) > 9:
+            tags.append("long_putt")
+        # A makeable, missable putt (not a tap-in, not a long lag) is a moment make or miss. Tagged,
+        # not scored up: the reaction path needs to stay the pre-written one (which knows holed /
+        # short / past); the tag just lets it skip the routine dice so it always gets a word.
+        feet = _to_feet(hud.to_pin)
+        if feet is not None and 3 <= feet <= 12:
+            tags.append("makeable_putt")
+        return min(score + 0.1, 1.0), tags
+
+    carry = shot.carry or 0
+    if carry >= 290:
+        score += 0.7
+        tags.append("monster_carry")
+    elif carry >= 260:
+        score += 0.35
+        tags.append("big_carry")
+
+    same_club = [r.shot.carry for r in prior if r.shot.club and r.shot.club == shot.club and r.shot.carry]
+    if shot.club and len(same_club) >= 3 and carry > max(same_club):
+        score += 0.35
+        tags.append(f"longest_{shot.club}_tonight")
+
+    hla = shot.hla or 0
+    if abs(hla) >= 8:
+        score += 0.5
+        tags.append("big_miss_right" if hla > 0 else "big_miss_left")
+    axis = shot.spin_axis or 0
+    if abs(axis) >= 20:
+        score += 0.25
+        tags.append("big_slice_or_fade" if axis > 0 else "big_hook_or_draw")
+
+    if (shot.ball_speed or 0) < 70 and carry < 60 and shot.club not in (None, "SW", "LW", "GW", "PW"):
+        score += 0.5
+        tags.append("mishit")
+
+    if carry and abs(hla) < 2 and abs(axis) < 5 and not tags:
+        tags.append("pure_strike")
+        score += 0.1
+
+    return min(score, 1.0), tags
+
+
+def holed_putt_score(score: float, hud: Hud, tags: list[str], notable: float, big: float) -> float:
+    """A putt that drops is never routine: a makeable one always gets a word, and one from outside
+    12 feet (or a fast, long roll when the distance wasn't read) is a big moment. A tap-in stays as is."""
+    feet = _to_feet(hud.to_pin)
+    if (feet is not None and feet > 12) or (feet is None and "long_putt" in tags):
+        return max(score, big)
+    if feet is None or feet >= 3:
+        return max(score, notable)
+    return score
+

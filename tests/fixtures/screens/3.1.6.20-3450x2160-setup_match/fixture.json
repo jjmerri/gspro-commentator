@@ -1,0 +1,61 @@
+{
+ "captured": "2026-10-17 12:40:55",
+ "kind": "setup_match",
+ "gspro_version": "3.1.6.20",
+ "size": [
+  3450,
+  2160
+ ],
+ "regions": {
+  "setup_course": {
+   "left": 0.797,
+   "top": 0.922,
+   "width": 0.165,
+   "height": 0.064,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_match_tab": {
+   "left": 0.44,
+   "top": 0.108,
+   "width": 0.12,
+   "height": 0.04,
+   "anchor": "top",
+   "aspect": null
+  },
+  "setup_game_mode": {
+   "left": 0.36,
+   "top": 0.285,
+   "width": 0.17,
+   "height": 0.042,
+   "anchor": "top",
+   "aspect": null
+  }
+ },
+ "boxes": {
+  "setup_course": [
+   2750,
+   1992,
+   569,
+   138
+  ],
+  "setup_match_tab": [
+   1518,
+   233,
+   414,
+   86
+  ],
+  "setup_game_mode": [
+   1242,
+   616,
+   586,
+   91
+  ]
+ },
+ "expected": {
+  "course": "PAYNES VALLEY",
+  "match_tab": true,
+  "mode_read": true,
+  "scramble": true
+ }
+}

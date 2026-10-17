@@ -1,0 +1,142 @@
+# Deploy and operate on the sim PC
+
+The booth runs on the Windows PC that runs GSPro. You can develop on the same PC or on another
+machine; either way, the sim PC should be a **git clone** of this repo so updates are a `git pull`.
+
+Your own machine details (host, user, SSH key, paths) belong in `DEPLOY.local.md`, which is
+gitignored. Keep personal notes there, not here.
+
+## Install
+
+From a terminal on the sim PC:
+
+```
+git clone https://github.com/jjmerri/gspro-shotcast.git
+cd gspro-shotcast
+py -3.13 -m venv .venv
+.venv\Scripts\pip install -e ".[capture,cloud]"
+copy config.example.yaml config.yaml
+copy .env.example .env
+```
+
+Then:
+
+1. Fill in `.env` with the keys you use (see [Config and secrets](#config-and-secrets)).
+2. Optional, for league features: `copy data\league.example.json data\league.json` and fill in
+   your league. Only `teams[].players[].name` is required; add `gspro_name` and `aliases` so the
+   booth can match GSPro's player names to your roster. Then set `league_file: data/league.json`
+   in `config.yaml`. Without a league file every round is commentated as practice.
+3. Edit `config.yaml` if needed. The example uses the cloud models and voices (both API keys in
+   `.env`) and GSPconnect's log as the shot source; see [docs/booth.md](docs/booth.md#models-and-voices)
+   for local models and voices and [docs/tracking.md](docs/tracking.md#launch-monitors) for other
+   launch monitors.
+4. Bring it up step by step: `check`, `say "Testing"`, `run --replay data/sample_shots.jsonl`,
+   then calibrate the screen with `screen-check.bat`.
+
+`config.yaml`, `.env`, `data/league.json`, `data/history.json` and `logs/` are all gitignored, so
+`git pull` never touches your league or your settings.
+
+## Update
+
+```
+cd gspro-shotcast
+git pull
+.venv\Scripts\pip install -e ".[capture,cloud]"     # only needed if pyproject.toml changed
+.venv\Scripts\python.exe -m compileall -q commentator  # quick syntax check
+```
+
+**An update does nothing until the booth is restarted.** Python loads modules once at launch,
+so changed code has no effect on a running booth. Close the "Golf Booth" window and relaunch
+`start-booth.bat`. Don't update mid-round.
+
+When `config.example.yaml` changes, diff it against your `config.yaml` for new settings.
+
+## Running the booth
+
+Two batch files in the repo root:
+
+- **`start-booth.bat`** launches the booth minimized in a window titled "Golf Booth". Double-click
+  it for a league night; close that window to stop.
+- **`screen-check.bat`** runs `calibrate` then `ocr-test` into `logs\screen-check.txt`. Use it to
+  confirm the OCR regions still line up after a GSPro update or a resolution change.
+
+### Remote administration (optional)
+
+If you manage the PC over SSH (Windows OpenSSH server):
+
+- SSH sessions run Windows `cmd`, so quote-heavy `python -c` one-liners get mangled. Ship a script
+  file and run it instead.
+- Screen capture (`calibrate`, `ocr-test`, `screen-check.bat`) does **not** work over a plain SSH
+  session, because the capture APIs need an interactive desktop. Run it from a logged-in session,
+  or from a scheduled task created with `schtasks /it`.
+- The PC may be asleep and SSH may time out. Retry or wake it before assuming something failed.
+
+## What comes from where
+
+The booth reads GSPro and the launch monitor out of files GSPro and GSPconnect already write.
+It only reads these; it never writes to them. Paths are GSPro's defaults; change them in
+`config.yaml` under `source:` if your install differs.
+
+| Source | Default path | Gives the booth |
+|---|---|---|
+| GSPconnect debug log (`source.type: connector_log`) | `C:\GSProV1\Core\GSPC\ConnectDebug.txt` | Ball and club data per shot from GSPconnect's built-in connectors (e.g. Uneekor) |
+| GSPro Unity log (`source.gspro_log_truth: true`) | `%USERPROFILE%\AppData\LocalLow\GSPro\GSPro\output_log.txt` | Authoritative strokes, penalties, resting-lie material, distance to pin, hole-outs, concessions, course and par |
+| GSPro course files (`source.gspro_courses_dirs`) | `C:\GSProV1\Courses` and `C:\GSProV1\Core\GSP\Courses` | Par, stroke index, tee yardages, altitude |
+| Screen (OCR + vision) | live framebuffer (`screen.capture: monitor`) | Who is up, HUD carry/total tiles, minimap lie and slope, the hole image for the hazard read |
+| GSPro's own DB | `%USERPROFILE%\AppData\LocalLow\GSPro\GSPro\GSPro.db` | GSPro's internal store. The booth does not read or write this; listed only so it is not mistaken for ours |
+
+The alternate `gspro_sniffer` source reads the same shot data off GSPro's Open Connect loopback
+socket (port 921) with scapy. It needs Npcap with loopback support and an Administrator terminal,
+and is the option for third-party connectors that don't go through GSPconnect's debug log.
+
+## Files on the PC
+
+```
+gspro-shotcast\
+  start-booth.bat        launch the booth (minimized)
+  screen-check.bat       calibrate + ocr-test into logs\screen-check.txt
+  config.yaml            your config (gitignored). Secrets are NOT here
+  config.example.yaml    the template, kept in sync with the code
+  .env                   secrets only (gitignored)
+  .env.example           the template for .env
+  .venv\                 the Python environment with all deps
+  commentator\           the package
+  data\
+    league.json          your league (teams, players, aliases, handicaps, schedule, stories; gitignored)
+    history.json         earlier seasons, from import-league (optional; gitignored)
+  models\                Kokoro voice files (only for local TTS)
+  logs\                  everything the booth writes (below)
+```
+
+`logs\` holds, per day:
+
+- `booth-YYYY-MM-DD.log` the booth's own debug log (OCR reads, timings, decisions).
+- `transcript-YYYY-MM-DD.txt` every line spoken, timestamped.
+- `usage.jsonl` per-call LLM token counts and estimated cost, for `cost`.
+- `season.db` the SQLite shot and round database (every shot, round, scorecard and spoken line
+  across nights; see [docs/tracking.md](docs/tracking.md)). Back this up: it's the only copy.
+- `calibrate.png`, `setup*.png`, `load*.png` and similar: debug screenshots.
+- `shots\` per-shot debug snapshots when `screen.save_review_images` is on (off by default;
+  it is a lot of disk).
+
+## Config and secrets
+
+- **`config.yaml`** is gitignored and per machine. A dev machine and the sim PC usually differ
+  (a dev box might use `source.type: replay` and console TTS). Keep a `config.yaml.bak` before
+  big edits as a rollback point.
+- **`.env` holds only secrets** and is gitignored. Start from `.env.example`. Keys the booth reads:
+  - `ANTHROPIC_API_KEY` for Claude calls.
+  - `OPENAI_API_KEY` for GPT models and the OpenAI voices.
+  - `SQUABBIT_EMAIL` and `SQUABBIT_PASSWORD` for the live-handicap pull (only if
+    `squabbit.enabled: true`).
+
+## Quick checks
+
+```
+.venv\Scripts\python.exe -m commentator check   # league loads, models answer
+type logs\transcript-<today>.txt                # what was said tonight
+.venv\Scripts\python.exe -m commentator cost    # tonight's spend
+```
+
+Tests take a minute or two on Windows. In `cmd`, read the end of the
+output with PowerShell `Get-Content ... | Select-Object -Last 20`, since `cmd` has no `tail`.
